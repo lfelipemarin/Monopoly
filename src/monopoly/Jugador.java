@@ -15,6 +15,61 @@ public class Jugador {
     private int estado;
     private Ficha ficha;
     private String nombre;
-    private int posicion;
+
+    /**
+     * @return the cuenta
+     */
+    public Cuenta getCuenta() {
+        return cuenta;
+    }
+
+    /**
+     * @param cuenta the cuenta to set
+     */
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+    }
+
+    /**
+     * @return the estado
+     */
+    public int getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
+    /**
+     * @return the ficha
+     */
+    public Ficha getFicha() {
+        return ficha;
+    }
+
+    /**
+     * @param ficha the ficha to set
+     */
+    public void setFicha(Ficha ficha) {
+        this.ficha = ficha;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
 }
