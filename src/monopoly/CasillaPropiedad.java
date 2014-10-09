@@ -17,6 +17,7 @@ public class CasillaPropiedad extends Casilla {
     private int renta;
     private int valor;
     private String tipoPropiedad;
+    private Hipoteca hipoteca;
 
     /**
      * @return the estado
@@ -72,5 +73,19 @@ public class CasillaPropiedad extends Casilla {
      */
     public void setTipoPropiedad(String tipoPropiedad) {
         this.tipoPropiedad = tipoPropiedad;
+    }
+
+    /**
+     * @return the hipoteca
+     */
+    public Hipoteca getHipoteca() {
+        return hipoteca;
+    }
+
+    /**
+     * @param hipoteca the hipoteca to set
+     */
+    public void setHipoteca(Hipoteca hipoteca) {
+        this.hipoteca = hipoteca;
     }
 }

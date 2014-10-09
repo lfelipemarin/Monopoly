@@ -12,9 +12,8 @@ package monopoly;
  */
 public class Hipoteca {
     private int interes;
-    private Jugador jugador;
-    private int monto;
-    private PropiedadTerreno propiedad;
+    private int montoDeshipotecar;
+    private int montoHipoteca;
 
     /**
      * @return the interes
@@ -31,44 +30,30 @@ public class Hipoteca {
     }
 
     /**
-     * @return the jugador
+     * @return the montoDeshipotecar
      */
-    public Jugador getJugador() {
-        return jugador;
+    public int getMontoDeshipotecar() {
+        return montoDeshipotecar;
     }
 
     /**
-     * @param jugador the jugador to set
+     * @param montoDeshipotecar the montoDeshipotecar to set
      */
-    public void setJugador(Jugador jugador) {
-        this.jugador = jugador;
+    public void setMontoDeshipotecar(int montoDeshipotecar) {
+        this.montoDeshipotecar = montoDeshipotecar;
     }
 
     /**
-     * @return the monto
+     * @return the montoHipoteca
      */
-    public int getMonto() {
-        return monto;
+    public int getMontoHipoteca() {
+        return montoHipoteca;
     }
 
     /**
-     * @param monto the monto to set
+     * @param montoHipoteca the montoHipoteca to set
      */
-    public void setMonto(int monto) {
-        this.monto = monto;
-    }
-
-    /**
-     * @return the propiedad
-     */
-    public PropiedadTerreno getPropiedad() {
-        return propiedad;
-    }
-
-    /**
-     * @param propiedad the propiedad to set
-     */
-    public void setPropiedad(PropiedadTerreno propiedad) {
-        this.propiedad = propiedad;
+    public void setMontoHipoteca(int montoHipoteca) {
+        this.montoHipoteca = montoHipoteca;
     }
 }

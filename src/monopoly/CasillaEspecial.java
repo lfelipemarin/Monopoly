@@ -11,5 +11,19 @@ package monopoly;
  * @author felipe
  */
 public abstract class CasillaEspecial extends Casilla{
-    
+    private String tipoCasillaEspecial;
+
+    /**
+     * @return the tipoCasillaEspecial
+     */
+    public String getTipoCasillaEspecial() {
+        return tipoCasillaEspecial;
+    }
+
+    /**
+     * @param tipoCasillaEspecial the tipoCasillaEspecial to set
+     */
+    public void setTipoCasillaEspecial(String tipoCasillaEspecial) {
+        this.tipoCasillaEspecial = tipoCasillaEspecial;
+    }
 }

@@ -9,7 +9,7 @@ package monopoly;
  *
  * @author Actualizaciones
  */
-public class Tarjeta {
+public abstract class Tarjeta {
 
     /**FALTA ACCCION
      * 
