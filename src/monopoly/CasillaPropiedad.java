@@ -5,8 +5,6 @@
  */
 package monopoly;
 
-import java.util.Collection;
-
 /**
  *
  * @author felipe

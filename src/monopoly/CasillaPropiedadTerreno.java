@@ -15,8 +15,6 @@ public class CasillaPropiedadTerreno extends CasillaPropiedad {
 
     private Collection<Mejora> mejoras;
     private String color;
-    private int renta;
-    private int valor;
 
     /**
      * @return the mejoras
@@ -46,31 +44,4 @@ public class CasillaPropiedadTerreno extends CasillaPropiedad {
         this.color = color;
     }
 
-    /**
-     * @return the renta
-     */
-    public int getRenta() {
-        return renta;
-    }
-
-    /**
-     * @param renta the renta to set
-     */
-    public void setRenta(int renta) {
-        this.renta = renta;
-    }
-
-    /**
-     * @return the valor
-     */
-    public int getValor() {
-        return valor;
-    }
-
-    /**
-     * @param valor the valor to set
-     */
-    public void setValor(int valor) {
-        this.valor = valor;
-    }
 }
