@@ -37,11 +37,6 @@ public class Cuenta {
         return propiedades;
     }
 
-    /**
-     * @param propiedades the propiedades to set
-     */
-    public void setPropiedades(Collection<PropiedadTerreno> propiedades) {
-        this.propiedades = propiedades;
-    }
+    
     
 }

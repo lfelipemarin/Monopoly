@@ -11,5 +11,12 @@ package monopoly;
  * @author felipe
  */
 public class CasillaEspecialSueldo extends CasillaEspecial{
+    public int sueldo;
+
+    //Metodo rebibe como parametro jugador Suma a la cuenta
+
+    
+    
+    
     
 }

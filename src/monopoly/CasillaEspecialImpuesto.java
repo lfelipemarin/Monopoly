@@ -12,4 +12,8 @@ package monopoly;
  */
 public class CasillaEspecialImpuesto extends CasillaEspecial{
     
+//    final int impuesto;
+    
+    
+    
 }

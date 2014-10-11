@@ -23,14 +23,7 @@ public class Jugador {
         return cuenta;
     }
 
-    /**
-     * @param cuenta the cuenta to set
-     */
-    public void setCuenta(Cuenta cuenta) {
-        this.cuenta = cuenta;
-    }
-
-    /**
+       /**
      * @return the estado
      */
     public int getEstado() {

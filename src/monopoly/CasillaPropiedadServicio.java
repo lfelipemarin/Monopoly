@@ -11,19 +11,18 @@ package monopoly;
  * @author felipe
  */
 public class CasillaPropiedadServicio extends CasillaPropiedad{
-    private String tipoServicio;
+    private String tipoPropiedadServicio;
 
     /**
-     * @return the tipoServicio
+     * @return the tipoPropiedadServicio
      */
-    public String getTipoServicio() {
-        return tipoServicio;
+    public String getTipoPropiedadServicio() {
+        return tipoPropiedadServicio;
     }
 
-    /**
-     * @param tipoServicio the tipoServicio to set
-     */
-    public void setTipoServicio(String tipoServicio) {
-        this.tipoServicio = tipoServicio;
-    }
+   //public int renta=this.getRenta();
+           
+
+    
 }
+
