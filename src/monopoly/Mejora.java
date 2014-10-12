@@ -11,34 +11,13 @@ package monopoly;
  * @author felipe
  */
 public class Mejora {
-    private int tipo;
-    private int valor;
+    private String tipoMejora;
 
     /**
-     * @return the tipo
+     * @return the tipoMejora
      */
-    public int getTipo() {
-        return tipo;
+    public String getTipoMejora() {
+        return tipoMejora;
     }
-
-    /**
-     * @param tipo the tipo to set
-     */
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
-
-    /**
-     * @return the valor
-     */
-    public int getValor() {
-        return valor;
-    }
-
-    /**
-     * @param valor the valor to set
-     */
-    public void setValor(int valor) {
-        this.valor = valor;
-    }
+   
 }

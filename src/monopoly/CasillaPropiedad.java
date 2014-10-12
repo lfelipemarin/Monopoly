@@ -9,13 +9,24 @@ package monopoly;
  *
  * @author felipe
  */
-public class CasillaPropiedad extends Casilla {
+public abstract class CasillaPropiedad extends Casilla {
 
     private int estado;
+    private final String nombre;
     private int renta;
-    private int valor;
-    private String tipoPropiedad;
-    private Hipoteca hipoteca;
+    private final int rentaBase;
+    private final String tipoCasillaPropiedad;
+    private final int valor;
+    private final int valorHipoteca;
+
+    public CasillaPropiedad(String nombre, int rentaBase, String tipoCasillaPropiedad,
+            int valor, int valorHipoteca) {
+        this.nombre = nombre;
+        this.rentaBase = rentaBase;
+        this.tipoCasillaPropiedad = tipoCasillaPropiedad;
+        this.valor = valor;
+        this.valorHipoteca = valorHipoteca;
+    }
 
     /**
      * @return the estado
@@ -29,6 +40,13 @@ public class CasillaPropiedad extends Casilla {
      */
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
     }
 
     /**
@@ -46,6 +64,20 @@ public class CasillaPropiedad extends Casilla {
     }
 
     /**
+     * @return the rentaBase
+     */
+    public int getRentaBase() {
+        return rentaBase;
+    }
+
+    /**
+     * @return the tipoCasillaPropiedad
+     */
+    public String getTipoCasillaPropiedad() {
+        return tipoCasillaPropiedad;
+    }
+
+    /**
      * @return the valor
      */
     public int getValor() {
@@ -53,37 +85,10 @@ public class CasillaPropiedad extends Casilla {
     }
 
     /**
-     * @param valor the valor to set
+     * @return the valorHipoteca
      */
-    public void setValor(int valor) {
-        this.valor = valor;
+    public int getValorHipoteca() {
+        return valorHipoteca;
     }
 
-    /**
-     * @return the tipoPropiedad
-     */
-    public String getTipoPropiedad() {
-        return tipoPropiedad;
-    }
-
-    /**
-     * @param tipoPropiedad the tipoPropiedad to set
-     */
-    public void setTipoPropiedad(String tipoPropiedad) {
-        this.tipoPropiedad = tipoPropiedad;
-    }
-
-    /**
-     * @return the hipoteca
-     */
-    public Hipoteca getHipoteca() {
-        return hipoteca;
-    }
-
-    /**
-     * @param hipoteca the hipoteca to set
-     */
-    public void setHipoteca(Hipoteca hipoteca) {
-        this.hipoteca = hipoteca;
-    }
 }
