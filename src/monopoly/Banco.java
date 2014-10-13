@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package monopoly;
 
 import java.util.Collection;
@@ -13,9 +12,16 @@ import java.util.Collection;
  * @author felipe
  */
 public class Banco {
+
     private Cuenta cuenta;
     private Collection<Hipoteca> hipotecas;
     private Collection<Mejora> mejoras;
+
+    public Banco(Cuenta cuenta, Collection<Hipoteca> hipotecas, Collection<Mejora> mejoras) {
+        this.cuenta = cuenta;
+        this.hipotecas = hipotecas;
+        this.mejoras = mejoras;
+    }
 
     /**
      * @return the cuenta
@@ -58,6 +64,5 @@ public class Banco {
     public void setMejoras(Collection<Mejora> mejoras) {
         this.mejoras = mejoras;
     }
-    
-    
+
 }

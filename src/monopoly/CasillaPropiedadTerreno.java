@@ -66,7 +66,7 @@ public class CasillaPropiedadTerreno extends CasillaPropiedad {
                 mejoras.add(mejora);
             } else {
                 System.out.print("No mas espacio para casas, se agrega un hotel");
-                for (Mejora mejora1 : mejoras) {
+                for (Mejora mejora1 : mejoras) {    //hacer un metodo para remover todas las casas de una.
                     if (mejora1.getTipoMejora().equals("casa")) {
                         mejoras.remove(mejora1);
                     }
@@ -78,9 +78,9 @@ public class CasillaPropiedadTerreno extends CasillaPropiedad {
 
     public void removeMejora(String tipoMejora) {
         for (Mejora mejora : mejoras) {
-            if (mejora.getTipoMejora().equals(tipoMejora)) {
-                mejoras.remove(mejora);
-                return;
+            if(mejora.getTipoMejora().equals(tipoMejora)){
+            mejoras.remove(mejora);
+            return;
             }
         }
     }

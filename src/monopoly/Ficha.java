@@ -11,21 +11,18 @@ package monopoly;
  * @author felipe
  */
 public class Ficha {
-    private String id;
+    private final String id;
     private int posicion;
+
+    public Ficha(String id) {
+        this.id = id;
+    }
 
     /**
      * @return the id
      */
     public String getId() {
         return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
     }
 
     /**

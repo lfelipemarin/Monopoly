@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package monopoly;
 
 /**
@@ -11,10 +10,16 @@ package monopoly;
  * @author felipe
  */
 public class Jugador {
+
     private Cuenta cuenta;
     private int estado;
-    private Ficha ficha;
-    private String nombre;
+    private final Ficha ficha;
+    private final String nombre;
+
+    public Jugador(Ficha ficha, String nombre) {
+        this.ficha = ficha;
+        this.nombre = nombre;
+    }
 
     /**
      * @return the cuenta
@@ -23,7 +28,7 @@ public class Jugador {
         return cuenta;
     }
 
-       /**
+    /**
      * @return the estado
      */
     public int getEstado() {
@@ -45,24 +50,10 @@ public class Jugador {
     }
 
     /**
-     * @param ficha the ficha to set
-     */
-    public void setFicha(Ficha ficha) {
-        this.ficha = ficha;
-    }
-
-    /**
      * @return the nombre
      */
     public String getNombre() {
         return nombre;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
 }
