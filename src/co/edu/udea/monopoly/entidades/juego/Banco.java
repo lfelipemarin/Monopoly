@@ -5,8 +5,9 @@
  */
 package co.edu.udea.monopoly.entidades.juego;
 
+import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
 import co.edu.udea.monopoly.entidades.tablero.Mejora;
-import java.util.Collection;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,40 +15,78 @@ import java.util.Collection;
  */
 public class Banco {
 
-    private Cuenta cuenta;
-    private Collection<Mejora> mejoras;
+    private int dinero;
+    private final ArrayList<Mejora> mejoras;
+    private final ArrayList<CasillaPropiedad> propiedades;
 
-    public Banco(Cuenta cuenta, Collection<Mejora> mejoras) {
-        this.cuenta = cuenta;
-        this.mejoras = mejoras;
+    public Banco() {
+        this.mejoras = new ArrayList<>();
+        this.propiedades = new ArrayList<>();
+        this.dinero = 100000000; //cien millones
     }
 
     /**
-     * @return the cuenta
+     * @return the dinero
      */
-    public Cuenta getCuenta() {
-        return cuenta;
+    public int getDinero() {
+        return dinero;
     }
 
     /**
-     * @param cuenta the cuenta to set
+     * @param dinero the dinero to set
      */
-    public void setCuenta(Cuenta cuenta) {
-        this.cuenta = cuenta;
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
+    }
+
+    /**
+     * @return the propiedades
+     */
+    public ArrayList<CasillaPropiedad> getPropiedades() {
+        return propiedades;
     }
 
     /**
      * @return the mejoras
      */
-    public Collection<Mejora> getMejoras() {
+    public ArrayList<Mejora> getMejoras() {
         return mejoras;
     }
 
-    /**
-     * @param mejoras the mejoras to set
-     */
-    public void setMejoras(Collection<Mejora> mejoras) {
-        this.mejoras = mejoras;
+    public boolean agregarMejora(String tipoMejora) {
+        try {
+            mejoras.add(new Mejora(tipoMejora));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
+    public boolean borrarMejora(String tipoMejora) {
+        for (Mejora m : mejoras) {
+            if (m.getTipoMejora().equals(tipoMejora)) {
+                mejoras.remove(m);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean agregarPropiedad(CasillaPropiedad propiedad) {
+        try {
+            propiedades.add(propiedad);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public boolean borrarPorpiedad(CasillaPropiedad propiedad) {
+        try {
+            propiedades.remove(propiedad);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
