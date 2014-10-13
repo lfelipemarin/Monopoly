@@ -13,6 +13,10 @@ package monopoly;
 public class CasillaPropiedadServicio extends CasillaPropiedad{
     private String tipoPropiedadServicio;
 
+    public CasillaPropiedadServicio(String nombre, int rentaBase, String tipoCasillaPropiedad, int valor, int valorHipoteca) {
+        super(nombre, rentaBase, tipoCasillaPropiedad, valor, valorHipoteca);
+    }
+
     /**
      * @return the tipoPropiedadServicio
      */

@@ -6,15 +6,12 @@
 
 package monopoly;
 
-import java.util.Collection;
-
 /**
  *
  * @author felipe
  */
 public class Cuenta {
     private int dinero;
-    private Collection<PropiedadTerreno> propiedades;
 
     /**
      * @return the dinero
@@ -30,13 +27,4 @@ public class Cuenta {
         this.dinero = dinero;
     }
 
-    /**
-     * @return the propiedades
-     */
-    public Collection<PropiedadTerreno> getPropiedades() {
-        return propiedades;
-    }
-
-    
-    
 }

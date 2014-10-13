@@ -10,6 +10,10 @@ package monopoly;
  * @author Actualizaciones
  */
 public class CasillaPropiedadServicioFerrocarril extends CasillaPropiedadServicio{
+
+    public CasillaPropiedadServicioFerrocarril(String nombre, int rentaBase, String tipoCasillaPropiedad, int valor, int valorHipoteca) {
+        super(nombre, rentaBase, tipoCasillaPropiedad, valor, valorHipoteca);
+    }
     
     
     
