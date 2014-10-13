@@ -13,6 +13,8 @@ import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
  */
 public class Jugador {
 
+    private final String ENCARCELDADO = "encarcelado";
+    private final String LIBRE = "libre";
     private final Cuenta cuenta;
     private String estado;
     private final Ficha ficha;
@@ -60,9 +62,9 @@ public class Jugador {
     }
 
     /*
-    el jugador que invoca este metodo compra la propiedad pasada por parametro
-    al banco (pasado tambien como parametro)
-    */
+     el jugador que invoca este metodo compra la propiedad pasada por parametro
+     al banco (pasado tambien como parametro)
+     */
     public boolean comprarPropiedad(Banco banco, CasillaPropiedad propiedad) {
         if (banco.borrarPorpiedad(propiedad)) {
             if (getCuenta().agregarPropiedad(propiedad)) {
@@ -74,9 +76,9 @@ public class Jugador {
     }
 
     /*
-    el jugador que llama este metodo compra la propiedad pasada como parametro 
-    al jugador pasado como parametro
-    */
+     el jugador que llama este metodo compra la propiedad pasada como parametro 
+     al jugador pasado como parametro
+     */
     public boolean comprarPropiedad(Jugador jugador, CasillaPropiedad propiedad) {
         if (jugador.getCuenta().borraPropiedad(propiedad)) {
             if (getCuenta().agregarPropiedad(propiedad)) {
@@ -88,9 +90,9 @@ public class Jugador {
     }
 
     /*
-    el jugador que invoca este metodo vender la propiedad pasada como parametro
-    al banco (pasado como parametro)
-    */
+     el jugador que invoca este metodo vender la propiedad pasada como parametro
+     al banco (pasado como parametro)
+     */
     public boolean venderPropiedad(Banco banco, CasillaPropiedad propiedad) {
         if (getCuenta().borraPropiedad(propiedad)) {
             if (banco.agregarPropiedad(propiedad)) {
@@ -102,9 +104,9 @@ public class Jugador {
     }
 
     /*
-    el jugador que invoca este emtodo vende la propiedad pasada como parametro
-    al jugador pasado como parametro
-    */
+     el jugador que invoca este emtodo vende la propiedad pasada como parametro
+     al jugador pasado como parametro
+     */
     public boolean venderPropiedad(Jugador jugador, CasillaPropiedad propiedad) {
         if (getCuenta().borraPropiedad(propiedad)) {
             if (jugador.getCuenta().agregarPropiedad(propiedad)) {
@@ -116,11 +118,11 @@ public class Jugador {
     }
 
     /*
-    el jugador que invoca este metodo hipoteca la propiedad pasada como
-    parametro al banco (pasado como parametro).
+     el jugador que invoca este metodo hipoteca la propiedad pasada como
+     parametro al banco (pasado como parametro).
     
-    la propiedad debe ser del jugador que la hipoteca
-    */
+     la propiedad debe ser del jugador que la hipoteca
+     */
     public boolean hipotecar(Banco banco, CasillaPropiedad propiedad) {
         int hipoteca = propiedad.getValorHipoteca();
         if (cuenta.getPropiedades().contains(propiedad)) {
@@ -133,12 +135,12 @@ public class Jugador {
     }
 
     /*
-    el jugador que llama este parametro deshipoteca (del banco pasado como parametro)
-    la propiedad pasada como parametro.
+     el jugador que llama este parametro deshipoteca (del banco pasado como parametro)
+     la propiedad pasada como parametro.
     
-    la propiedad debe ser del jugador que la deshipoteca; un jugador debe primero
-    comprar una propiedad hipotecada para poderla deshipotecar
-    */
+     la propiedad debe ser del jugador que la deshipoteca; un jugador debe primero
+     comprar una propiedad hipotecada para poderla deshipotecar
+     */
     public boolean deshipotecar(Banco banco, CasillaPropiedad propiedad) {
         int deshipoteca = (int) (propiedad.getValorHipoteca() * 1.1);
         if (cuenta.getPropiedades().contains(propiedad)) {
