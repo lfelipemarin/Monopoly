@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.udea.monopoly.entidades.tablero;
 
 /**
@@ -11,8 +10,14 @@ package co.edu.udea.monopoly.entidades.tablero;
  * @author felipe
  */
 public abstract class Casilla {
-    private int posicion;
-    private String tipoCasilla;
+
+    private final int posicion;
+    private final String tipoCasilla;
+
+    public Casilla(int posicion, String tipoCasilla) {
+        this.posicion = posicion;
+        this.tipoCasilla = tipoCasilla;
+    }
 
     /**
      * @return the posicion
@@ -22,24 +27,9 @@ public abstract class Casilla {
     }
 
     /**
-     * @param posicion the posicion to set
-     */
-    public void setPosicion(int posicion) {
-        this.posicion = posicion;
-    }
-
-    /**
      * @return the tipoCasilla
      */
     public String getTipoCasilla() {
         return tipoCasilla;
     }
-
-    /**
-     * @param tipoCasilla the tipoCasilla to set
-     */
-    public void setTipoCasilla(String tipoCasilla) {
-        this.tipoCasilla = tipoCasilla;
-    }
-    
 }

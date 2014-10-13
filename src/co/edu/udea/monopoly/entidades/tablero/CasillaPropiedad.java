@@ -22,8 +22,9 @@ public abstract class CasillaPropiedad extends Casilla {
     private final int valor;
     private final int valorHipoteca;
 
-    public CasillaPropiedad(String nombre, int rentaBase, String tipoCasillaPropiedad,
+    public CasillaPropiedad(int posicion, String tipoCasilla, String nombre, int rentaBase, String tipoCasillaPropiedad,
             int valor, int valorHipoteca) {
+        super(posicion, tipoCasilla);
         this.nombre = nombre;
         this.rentaBase = rentaBase;
         this.tipoCasillaPropiedad = tipoCasillaPropiedad;
@@ -93,5 +94,7 @@ public abstract class CasillaPropiedad extends Casilla {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+    
+    public abstract void calculaRenta();
 
 }

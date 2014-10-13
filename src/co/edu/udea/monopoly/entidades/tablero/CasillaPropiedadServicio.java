@@ -3,30 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.udea.monopoly.entidades.tablero;
 
 /**
  *
  * @author felipe
  */
-public class CasillaPropiedadServicio extends CasillaPropiedad{
-    private String tipoPropiedadServicio;
+public abstract class CasillaPropiedadServicio extends CasillaPropiedad {
 
-    public CasillaPropiedadServicio(String nombre, int rentaBase, String tipoCasillaPropiedad, int valor, int valorHipoteca) {
-        super(nombre, rentaBase, tipoCasillaPropiedad, valor, valorHipoteca);
+    private final String tipoCasillaPropiedadServicio;
+
+    public CasillaPropiedadServicio(int posicion, String tipoCasilla,
+            String nombre, int rentaBase, String tipoCasillaPropiedad, int valor,
+            int valorHipoteca, String tipoCasillaPropiedadServicio) {
+        super(posicion, tipoCasilla, nombre, rentaBase, tipoCasillaPropiedad, valor, valorHipoteca);
+        this.tipoCasillaPropiedadServicio = tipoCasillaPropiedadServicio;
     }
 
     /**
-     * @return the tipoPropiedadServicio
+     * @return the tipoCasillaPropiedadServicio
      */
-    public String getTipoPropiedadServicio() {
-        return tipoPropiedadServicio;
+    public String getTipoCasillaPropiedadServicio() {
+        return tipoCasillaPropiedadServicio;
     }
 
-   //public int renta=this.getRenta();
-           
-
-    
 }
-

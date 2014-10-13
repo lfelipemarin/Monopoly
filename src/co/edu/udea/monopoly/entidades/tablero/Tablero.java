@@ -5,8 +5,7 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
-import co.edu.udea.monopoly.entidades.tablero.Casilla;
-import java.util.Collection;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +13,10 @@ import java.util.Collection;
  */
 public class Tablero {
 
-    private Collection<Casilla> casillas;
+    private final ArrayList<Casilla> casillas;
+
+    public Tablero() {
+        this.casillas = new ArrayList<>();
+    }
 
 }
