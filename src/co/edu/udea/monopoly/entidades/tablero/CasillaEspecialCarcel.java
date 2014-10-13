@@ -6,10 +6,22 @@
 
 package co.edu.udea.monopoly.entidades.tablero;
 
+import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
  */
 public class CasillaEspecialCarcel extends CasillaEspecial{
+
+    public CasillaEspecialCarcel(int posicion, String tipoCasilla) {
+        super(posicion, tipoCasilla);
+    }
+
+    @Override
+    public void ejecutarAccion(Jugador jugador, Banco banco) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

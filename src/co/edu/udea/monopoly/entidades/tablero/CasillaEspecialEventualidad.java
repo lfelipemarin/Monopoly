@@ -3,15 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.udea.monopoly.entidades.tablero;
+
+import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
  *
  * @author felipe
  */
-public class CasillaEspecialEventualidad extends CasillaEspecial{
+public abstract class CasillaEspecialEventualidad extends CasillaEspecial {
+
     private String tipoEventualidad;
+
+    public CasillaEspecialEventualidad(int posicion, String tipoCasilla) {
+        super(posicion, tipoCasilla);
+    }
 
     /**
      * @return the tipoEventualidad
@@ -26,4 +32,5 @@ public class CasillaEspecialEventualidad extends CasillaEspecial{
     public void setTipoEventualidad(String tipoEventualidad) {
         this.tipoEventualidad = tipoEventualidad;
     }
+
 }

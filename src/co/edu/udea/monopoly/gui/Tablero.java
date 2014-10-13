@@ -17,7 +17,6 @@ public class Tablero extends javax.swing.JFrame {
     public Tablero() {
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
-        this.jPanelTbalero.setPreferredSize(null);
     }
 
     /**
@@ -748,7 +747,7 @@ public class Tablero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Tablero().setVisible(true);
+                //new Tablero().setVisible(true);
             }
         });
     }
