@@ -16,6 +16,8 @@ public class Tablero extends javax.swing.JFrame {
      */
     public Tablero() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
+        this.jPanelTbalero.setPreferredSize(null);
     }
 
     /**
@@ -29,54 +31,64 @@ public class Tablero extends javax.swing.JFrame {
         java.awt.GridBagConstraints gridBagConstraints;
 
         jPanelTbalero = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
+        lblGo = new javax.swing.JLabel();
+        lblMedAve = new javax.swing.JLabel();
+        lblArcaCasilla3 = new javax.swing.JLabel();
+        lblBalticAve = new javax.swing.JLabel();
+        lblTaxCasilla5 = new javax.swing.JLabel();
+        lblFerroCasilla6 = new javax.swing.JLabel();
+        lblOrientalAve = new javax.swing.JLabel();
+        lblCasuCasilla8 = new javax.swing.JLabel();
+        lblVermontAve = new javax.swing.JLabel();
+        lblConnAve = new javax.swing.JLabel();
+        lblCarcel = new javax.swing.JLabel();
+        lblCharles = new javax.swing.JLabel();
+        lblCompCasilla13 = new javax.swing.JLabel();
+        lblStatesAve = new javax.swing.JLabel();
+        lblVirgAve = new javax.swing.JLabel();
+        lblFerroCasilla16 = new javax.swing.JLabel();
+        lblJames = new javax.swing.JLabel();
+        lblArcaCasilla18 = new javax.swing.JLabel();
+        lblTennAve = new javax.swing.JLabel();
+        lblNYAve = new javax.swing.JLabel();
+        lblParadaLibre = new javax.swing.JLabel();
+        lblKentuckyAve = new javax.swing.JLabel();
+        lblCasualCasilla23 = new javax.swing.JLabel();
+        lblIndianaAve = new javax.swing.JLabel();
+        lbIlliAve = new javax.swing.JLabel();
+        lblFerroCasilla26 = new javax.swing.JLabel();
+        lblAtlAve = new javax.swing.JLabel();
+        lblVentnorAve = new javax.swing.JLabel();
+        lblCompCasilla29 = new javax.swing.JLabel();
+        lblMarvin = new javax.swing.JLabel();
+        lblIrCarcel = new javax.swing.JLabel();
+        lblPacificAve = new javax.swing.JLabel();
+        lblNCAve = new javax.swing.JLabel();
+        lblArcaCasilla34 = new javax.swing.JLabel();
+        lblPennAve = new javax.swing.JLabel();
+        lblFerroCasilla36 = new javax.swing.JLabel();
+        lblCasualCasilla37 = new javax.swing.JLabel();
+        lblParkPlace = new javax.swing.JLabel();
+        lblTaxCasilla39 = new javax.swing.JLabel();
+        lblBoardwalk = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menMenu = new javax.swing.JMenu();
+        itmNuevoJuego = new javax.swing.JMenuItem();
+        menEdit = new javax.swing.JMenu();
+        menAcerca = new javax.swing.JMenu();
+        itmAcerca = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jPanelTbalero.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("1");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblGo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblGo.setText("1 GO");
+        lblGo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblGo.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblGo.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblGo.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
@@ -84,11 +96,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel1, gridBagConstraints);
+        jPanelTbalero.add(lblGo, gridBagConstraints);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("2");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMedAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMedAve.setText("2 Mediterranean Ave. ");
+        lblMedAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblMedAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblMedAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblMedAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
@@ -96,11 +111,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel2, gridBagConstraints);
+        jPanelTbalero.add(lblMedAve, gridBagConstraints);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("3");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblArcaCasilla3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblArcaCasilla3.setText("3 Arca Común");
+        lblArcaCasilla3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblArcaCasilla3.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblArcaCasilla3.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblArcaCasilla3.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -108,11 +126,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel3, gridBagConstraints);
+        jPanelTbalero.add(lblArcaCasilla3, gridBagConstraints);
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("4");
-        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblBalticAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBalticAve.setText("4 Bastic Ave.");
+        lblBalticAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblBalticAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblBalticAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblBalticAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -120,11 +141,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel4, gridBagConstraints);
+        jPanelTbalero.add(lblBalticAve, gridBagConstraints);
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("5");
-        jLabel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblTaxCasilla5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTaxCasilla5.setText("5 Impuestos");
+        lblTaxCasilla5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblTaxCasilla5.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblTaxCasilla5.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblTaxCasilla5.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -132,11 +156,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel5, gridBagConstraints);
+        jPanelTbalero.add(lblTaxCasilla5, gridBagConstraints);
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("6");
-        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFerroCasilla6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFerroCasilla6.setText("6 Ferrocarril Reading");
+        lblFerroCasilla6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblFerroCasilla6.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla6.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla6.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -144,11 +171,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel6, gridBagConstraints);
+        jPanelTbalero.add(lblFerroCasilla6, gridBagConstraints);
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("7");
-        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblOrientalAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOrientalAve.setText("7 Oriental Ave.");
+        lblOrientalAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblOrientalAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblOrientalAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblOrientalAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -156,11 +186,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel7, gridBagConstraints);
+        jPanelTbalero.add(lblOrientalAve, gridBagConstraints);
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("8");
-        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasuCasilla8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCasuCasilla8.setText("8 Casualidad");
+        lblCasuCasilla8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCasuCasilla8.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCasuCasilla8.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCasuCasilla8.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -168,11 +201,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel8, gridBagConstraints);
+        jPanelTbalero.add(lblCasuCasilla8, gridBagConstraints);
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("9");
-        jLabel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblVermontAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVermontAve.setText("9 Vermont Ave.");
+        lblVermontAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblVermontAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblVermontAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblVermontAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -180,11 +216,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel9, gridBagConstraints);
+        jPanelTbalero.add(lblVermontAve, gridBagConstraints);
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("10");
-        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblConnAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblConnAve.setText("10 Connecticut Ave.");
+        lblConnAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblConnAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblConnAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblConnAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -192,21 +231,27 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel10, gridBagConstraints);
+        jPanelTbalero.add(lblConnAve, gridBagConstraints);
 
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("11");
-        jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCarcel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCarcel.setText("11 Visita/Carcel");
+        lblCarcel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCarcel.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCarcel.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCarcel.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel11, gridBagConstraints);
+        jPanelTbalero.add(lblCarcel, gridBagConstraints);
 
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("12");
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCharles.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCharles.setText("12 St. Charles Place");
+        lblCharles.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCharles.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCharles.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCharles.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -214,11 +259,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel12, gridBagConstraints);
+        jPanelTbalero.add(lblCharles, gridBagConstraints);
 
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("13");
-        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCompCasilla13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCompCasilla13.setText("13 Compañía Electrica");
+        lblCompCasilla13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCompCasilla13.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCompCasilla13.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCompCasilla13.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -226,11 +274,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel13, gridBagConstraints);
+        jPanelTbalero.add(lblCompCasilla13, gridBagConstraints);
 
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("14");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblStatesAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblStatesAve.setText("14 States Ave.");
+        lblStatesAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblStatesAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblStatesAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblStatesAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
@@ -238,11 +289,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel14, gridBagConstraints);
+        jPanelTbalero.add(lblStatesAve, gridBagConstraints);
 
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("15");
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblVirgAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVirgAve.setText("15 Virginia Ave");
+        lblVirgAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblVirgAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblVirgAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblVirgAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -250,11 +304,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel15, gridBagConstraints);
+        jPanelTbalero.add(lblVirgAve, gridBagConstraints);
 
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("16");
-        jLabel16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFerroCasilla16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFerroCasilla16.setText("16 Ferrocarril Pennsylvania");
+        lblFerroCasilla16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblFerroCasilla16.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla16.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla16.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
@@ -262,11 +319,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel16, gridBagConstraints);
+        jPanelTbalero.add(lblFerroCasilla16, gridBagConstraints);
 
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("17");
-        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblJames.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblJames.setText("17 St. James Place");
+        lblJames.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblJames.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblJames.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblJames.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
@@ -274,11 +334,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel17, gridBagConstraints);
+        jPanelTbalero.add(lblJames, gridBagConstraints);
 
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("18");
-        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblArcaCasilla18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblArcaCasilla18.setText("18 Arca Común");
+        lblArcaCasilla18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblArcaCasilla18.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblArcaCasilla18.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblArcaCasilla18.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 0;
@@ -286,11 +349,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel18, gridBagConstraints);
+        jPanelTbalero.add(lblArcaCasilla18, gridBagConstraints);
 
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("19");
-        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblTennAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTennAve.setText("19 Tennessee Ave.");
+        lblTennAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblTennAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblTennAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblTennAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -298,11 +364,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel19, gridBagConstraints);
+        jPanelTbalero.add(lblTennAve, gridBagConstraints);
 
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("20");
-        jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblNYAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNYAve.setText("20 New York Ave.");
+        lblNYAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblNYAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblNYAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblNYAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 0;
@@ -310,11 +379,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel20, gridBagConstraints);
+        jPanelTbalero.add(lblNYAve, gridBagConstraints);
 
-        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setText("21");
-        jLabel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblParadaLibre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblParadaLibre.setText("21 Parada Libre");
+        lblParadaLibre.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblParadaLibre.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblParadaLibre.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblParadaLibre.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 0;
@@ -322,11 +394,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel21, gridBagConstraints);
+        jPanelTbalero.add(lblParadaLibre, gridBagConstraints);
 
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel22.setText("22");
-        jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblKentuckyAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblKentuckyAve.setText("22 Kentucky Ave.");
+        lblKentuckyAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblKentuckyAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblKentuckyAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblKentuckyAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 1;
@@ -334,11 +409,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel22, gridBagConstraints);
+        jPanelTbalero.add(lblKentuckyAve, gridBagConstraints);
 
-        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("23");
-        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasualCasilla23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCasualCasilla23.setText("23 Casualidad");
+        lblCasualCasilla23.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCasualCasilla23.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCasualCasilla23.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCasualCasilla23.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 2;
@@ -346,11 +424,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel23, gridBagConstraints);
+        jPanelTbalero.add(lblCasualCasilla23, gridBagConstraints);
 
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("24");
-        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblIndianaAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIndianaAve.setText("24 Indiana Ave.");
+        lblIndianaAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblIndianaAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblIndianaAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblIndianaAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 3;
@@ -358,11 +439,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel24, gridBagConstraints);
+        jPanelTbalero.add(lblIndianaAve, gridBagConstraints);
 
-        jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel25.setText("25");
-        jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbIlliAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbIlliAve.setText("25 Illinois Ave.");
+        lbIlliAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbIlliAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lbIlliAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lbIlliAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 4;
@@ -370,11 +454,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel25, gridBagConstraints);
+        jPanelTbalero.add(lbIlliAve, gridBagConstraints);
 
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("26");
-        jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFerroCasilla26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFerroCasilla26.setText("26 Ferrocarril B&Q");
+        lblFerroCasilla26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblFerroCasilla26.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla26.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla26.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 5;
@@ -382,11 +469,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel26, gridBagConstraints);
+        jPanelTbalero.add(lblFerroCasilla26, gridBagConstraints);
 
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("27");
-        jLabel27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblAtlAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAtlAve.setText("27 Atlantic Ave.");
+        lblAtlAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblAtlAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblAtlAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblAtlAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 6;
@@ -394,11 +484,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel27, gridBagConstraints);
+        jPanelTbalero.add(lblAtlAve, gridBagConstraints);
 
-        jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel28.setText("28");
-        jLabel28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblVentnorAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVentnorAve.setText("28 Ventnor Ave.");
+        lblVentnorAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblVentnorAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblVentnorAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblVentnorAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 7;
@@ -406,11 +499,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel28, gridBagConstraints);
+        jPanelTbalero.add(lblVentnorAve, gridBagConstraints);
 
-        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel29.setText("29");
-        jLabel29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCompCasilla29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCompCasilla29.setText("29 Compañía Agua");
+        lblCompCasilla29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCompCasilla29.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCompCasilla29.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCompCasilla29.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 8;
@@ -418,11 +514,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel29, gridBagConstraints);
+        jPanelTbalero.add(lblCompCasilla29, gridBagConstraints);
 
-        jLabel30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel30.setText("30");
-        jLabel30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMarvin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMarvin.setText("30 Marvin Gardens");
+        lblMarvin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblMarvin.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblMarvin.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblMarvin.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 9;
@@ -430,11 +529,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel30, gridBagConstraints);
+        jPanelTbalero.add(lblMarvin, gridBagConstraints);
 
-        jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("31");
-        jLabel31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblIrCarcel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIrCarcel.setText("31 Ir a la Carcel");
+        lblIrCarcel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblIrCarcel.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblIrCarcel.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblIrCarcel.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 10;
@@ -442,11 +544,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel31, gridBagConstraints);
+        jPanelTbalero.add(lblIrCarcel, gridBagConstraints);
 
-        jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel32.setText("32");
-        jLabel32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblPacificAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPacificAve.setText("32 Pacific Ave.");
+        lblPacificAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblPacificAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblPacificAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblPacificAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 9;
         gridBagConstraints.gridy = 10;
@@ -454,11 +559,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel32, gridBagConstraints);
+        jPanelTbalero.add(lblPacificAve, gridBagConstraints);
 
-        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel33.setText("33");
-        jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblNCAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNCAve.setText("33 North Carolina Ave.");
+        lblNCAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblNCAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblNCAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblNCAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 10;
@@ -466,11 +574,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel33, gridBagConstraints);
+        jPanelTbalero.add(lblNCAve, gridBagConstraints);
 
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("34");
-        jLabel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblArcaCasilla34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblArcaCasilla34.setText("34 Arca Común");
+        lblArcaCasilla34.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblArcaCasilla34.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblArcaCasilla34.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblArcaCasilla34.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 10;
@@ -478,11 +589,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel34, gridBagConstraints);
+        jPanelTbalero.add(lblArcaCasilla34, gridBagConstraints);
 
-        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel35.setText("35");
-        jLabel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblPennAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPennAve.setText("35 Pennsylvania Ave.");
+        lblPennAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblPennAve.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblPennAve.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblPennAve.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 10;
@@ -490,11 +604,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel35, gridBagConstraints);
+        jPanelTbalero.add(lblPennAve, gridBagConstraints);
 
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("36");
-        jLabel36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblFerroCasilla36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFerroCasilla36.setText("36 Ferrocarril Short Line");
+        lblFerroCasilla36.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblFerroCasilla36.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla36.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblFerroCasilla36.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 10;
@@ -502,11 +619,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel36, gridBagConstraints);
+        jPanelTbalero.add(lblFerroCasilla36, gridBagConstraints);
 
-        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel37.setText("37");
-        jLabel37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblCasualCasilla37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCasualCasilla37.setText("37 Casualidad");
+        lblCasualCasilla37.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblCasualCasilla37.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblCasualCasilla37.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblCasualCasilla37.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 10;
@@ -514,11 +634,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel37, gridBagConstraints);
+        jPanelTbalero.add(lblCasualCasilla37, gridBagConstraints);
 
-        jLabel38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel38.setText("38");
-        jLabel38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblParkPlace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblParkPlace.setText("38 Park Place");
+        lblParkPlace.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblParkPlace.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblParkPlace.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblParkPlace.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 10;
@@ -526,11 +649,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel38, gridBagConstraints);
+        jPanelTbalero.add(lblParkPlace, gridBagConstraints);
 
-        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel39.setText("39");
-        jLabel39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblTaxCasilla39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTaxCasilla39.setText("39 Impuestos");
+        lblTaxCasilla39.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblTaxCasilla39.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblTaxCasilla39.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblTaxCasilla39.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
@@ -538,11 +664,14 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel39, gridBagConstraints);
+        jPanelTbalero.add(lblTaxCasilla39, gridBagConstraints);
 
-        jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel40.setText("40");
-        jLabel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblBoardwalk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBoardwalk.setText("40 Boardwalk");
+        lblBoardwalk.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblBoardwalk.setMaximumSize(new java.awt.Dimension(90, 20));
+        lblBoardwalk.setMinimumSize(new java.awt.Dimension(90, 20));
+        lblBoardwalk.setPreferredSize(new java.awt.Dimension(90, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
@@ -550,17 +679,40 @@ public class Tablero extends javax.swing.JFrame {
         gridBagConstraints.ipady = 50;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        jPanelTbalero.add(jLabel40, gridBagConstraints);
+        jPanelTbalero.add(lblBoardwalk, gridBagConstraints);
+
+        menMenu.setText("Menu");
+
+        itmNuevoJuego.setText("Nuevo Juego");
+        menMenu.add(itmNuevoJuego);
+
+        jMenuBar1.add(menMenu);
+
+        menEdit.setText("Edit");
+        jMenuBar1.add(menEdit);
+
+        menAcerca.setText("Acerca");
+
+        itmAcerca.setText("Acerca de Monopoly");
+        menAcerca.add(itmAcerca);
+
+        jMenuBar1.add(menAcerca);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTbalero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelTbalero, javax.swing.GroupLayout.PREFERRED_SIZE, 1358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTbalero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanelTbalero, javax.swing.GroupLayout.PREFERRED_SIZE, 702, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -602,46 +754,52 @@ public class Tablero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuItem itmAcerca;
+    private javax.swing.JMenuItem itmNuevoJuego;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelTbalero;
+    private javax.swing.JLabel lbIlliAve;
+    private javax.swing.JLabel lblArcaCasilla18;
+    private javax.swing.JLabel lblArcaCasilla3;
+    private javax.swing.JLabel lblArcaCasilla34;
+    private javax.swing.JLabel lblAtlAve;
+    private javax.swing.JLabel lblBalticAve;
+    private javax.swing.JLabel lblBoardwalk;
+    private javax.swing.JLabel lblCarcel;
+    private javax.swing.JLabel lblCasuCasilla8;
+    private javax.swing.JLabel lblCasualCasilla23;
+    private javax.swing.JLabel lblCasualCasilla37;
+    private javax.swing.JLabel lblCharles;
+    private javax.swing.JLabel lblCompCasilla13;
+    private javax.swing.JLabel lblCompCasilla29;
+    private javax.swing.JLabel lblConnAve;
+    private javax.swing.JLabel lblFerroCasilla16;
+    private javax.swing.JLabel lblFerroCasilla26;
+    private javax.swing.JLabel lblFerroCasilla36;
+    private javax.swing.JLabel lblFerroCasilla6;
+    private javax.swing.JLabel lblGo;
+    private javax.swing.JLabel lblIndianaAve;
+    private javax.swing.JLabel lblIrCarcel;
+    private javax.swing.JLabel lblJames;
+    private javax.swing.JLabel lblKentuckyAve;
+    private javax.swing.JLabel lblMarvin;
+    private javax.swing.JLabel lblMedAve;
+    private javax.swing.JLabel lblNCAve;
+    private javax.swing.JLabel lblNYAve;
+    private javax.swing.JLabel lblOrientalAve;
+    private javax.swing.JLabel lblPacificAve;
+    private javax.swing.JLabel lblParadaLibre;
+    private javax.swing.JLabel lblParkPlace;
+    private javax.swing.JLabel lblPennAve;
+    private javax.swing.JLabel lblStatesAve;
+    private javax.swing.JLabel lblTaxCasilla39;
+    private javax.swing.JLabel lblTaxCasilla5;
+    private javax.swing.JLabel lblTennAve;
+    private javax.swing.JLabel lblVentnorAve;
+    private javax.swing.JLabel lblVermontAve;
+    private javax.swing.JLabel lblVirgAve;
+    private javax.swing.JMenu menAcerca;
+    private javax.swing.JMenu menEdit;
+    private javax.swing.JMenu menMenu;
     // End of variables declaration//GEN-END:variables
 }
