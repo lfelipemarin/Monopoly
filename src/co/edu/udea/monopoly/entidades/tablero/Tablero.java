@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.udea.monopoly.entidades.tablero;
+
+import co.edu.udea.monopoly.entidades.tablero.Casilla;
+import java.util.Collection;
 
 /**
  *
  * @author felipe
  */
-public class MejoraCasa extends Mejora{
-    
+public class Tablero {
+
+    private Collection<Casilla> casillas;
+
 }

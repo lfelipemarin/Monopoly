@@ -11,7 +11,10 @@ package co.edu.udea.monopoly.entidades.tablero;
  */
 public abstract class CasillaPropiedad extends Casilla {
 
-    private int estado;
+    public final String HIPOTECADA = "hipotecada";
+    public final String DISPONIBLE = "disponible";
+    public final String ADQUIRIDA = "adquirida";
+    private String estado;
     private final String nombre;
     private int renta;
     private final int rentaBase;
@@ -26,20 +29,6 @@ public abstract class CasillaPropiedad extends Casilla {
         this.tipoCasillaPropiedad = tipoCasillaPropiedad;
         this.valor = valor;
         this.valorHipoteca = valorHipoteca;
-    }
-
-    /**
-     * @return the estado
-     */
-    public int getEstado() {
-        return estado;
-    }
-
-    /**
-     * @param estado the estado to set
-     */
-    public void setEstado(int estado) {
-        this.estado = estado;
     }
 
     /**
@@ -89,6 +78,20 @@ public abstract class CasillaPropiedad extends Casilla {
      */
     public int getValorHipoteca() {
         return valorHipoteca;
+    }
+
+    /**
+     * @return the estado
+     */
+    public String getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
 }

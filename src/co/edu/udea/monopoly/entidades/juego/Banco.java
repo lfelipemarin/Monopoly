@@ -89,4 +89,15 @@ public class Banco {
             return false;
         }
     }
+
+    public void agregarDinero(int dinero) {
+        this.dinero += dinero;
+    }
+
+    public void restarDinero(int dinero) {
+        this.dinero -= dinero;
+        if (this.dinero <= 0) {
+            this.dinero = 1000000;
+        }
+    }
 }

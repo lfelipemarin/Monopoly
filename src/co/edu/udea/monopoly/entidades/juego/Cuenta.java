@@ -13,25 +13,30 @@ import java.util.ArrayList;
  * @author felipe
  */
 public class Cuenta {
-    
+
     private int dinero;
     private final ArrayList<CasillaPropiedad> propiedades;
-    
+
     public Cuenta() {
         this.propiedades = new ArrayList<>();
     }
-    
-    public void agregarPropiedad(CasillaPropiedad p) {
-        propiedades.add(p);
+
+    public boolean agregarPropiedad(CasillaPropiedad p) {
+        try {
+            propiedades.add(p);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
-    
-    public void borraPropiedad(CasillaPropiedad propiedad) {
-        propiedades.remove(propiedad);
-//        for (CasillaPropiedad p : propiedades) {
-//            if (p.equals(propiedad)) {
-//                propiedades.remove(p);
-//            }
-//        }
+
+    public boolean borraPropiedad(CasillaPropiedad propiedad) {
+        try {
+            propiedades.remove(propiedad);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /**
@@ -54,5 +59,18 @@ public class Cuenta {
     public ArrayList<CasillaPropiedad> getPropiedades() {
         return propiedades;
     }
-    
+
+    public void agregarDinero(int dinero) {
+        this.dinero += dinero;
+    }
+
+    public boolean restarDinero(int dinero) {
+        this.dinero -= dinero;
+        if (this.dinero < 0) {
+            this.dinero += dinero;
+            return false;
+        }
+        return true;
+    }
+
 }
