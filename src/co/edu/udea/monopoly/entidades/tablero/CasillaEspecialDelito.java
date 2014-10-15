@@ -6,6 +6,7 @@
 package co.edu.udea.monopoly.entidades.tablero;
 
 import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
@@ -19,7 +20,7 @@ public class CasillaEspecialDelito extends CasillaEspecial {
     }
 
     @Override
-    public void ejecutarAccion(Jugador jugador, Banco banco) {
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
         //mueve la ficha hasta la posicion 31 hasta la posicion 11 y el estado del 
         //jugador cambia de libre a preso.
         jugador.getFicha().setPosicion(11);

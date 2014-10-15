@@ -6,6 +6,7 @@
 package co.edu.udea.monopoly.entidades.tablero;
 
 import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
@@ -28,11 +29,11 @@ public class CasillaEspecialSueldo extends CasillaEspecial {
     }
 
     @Override
-    public void ejecutarAccion(Jugador jugador, Banco banco) {
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
         //se cobra un sueldo de 200 al pasar por la casilla 1
         int dineroJugador = jugador.getCuenta().getDinero();
         jugador.getCuenta().setDinero(dineroJugador + sueldo);
-        banco.restarDinero(sueldo);
+        juego.getBanco().restarDinero(sueldo);
     }
 
 }

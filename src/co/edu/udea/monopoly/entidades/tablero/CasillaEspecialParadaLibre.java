@@ -7,6 +7,7 @@
 package co.edu.udea.monopoly.entidades.tablero;
 
 import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
@@ -20,7 +21,7 @@ public class CasillaEspecialParadaLibre extends CasillaEspecial{
     }
 
     @Override
-    public void ejecutarAccion(Jugador jugador, Banco banco) {
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
          //se queda en la misma casilla y no se hace nada.
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

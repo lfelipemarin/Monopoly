@@ -5,32 +5,34 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
+import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
  *
  * @author felipe
  */
-public abstract class CasillaEspecialEventualidad extends CasillaEspecial {
+public class CasillaEspecialEventualidad extends CasillaEspecial {
 
-    private String tipoEventualidad;
+    private final String tipoCasillaEspecialEventualidad;
 
-    public CasillaEspecialEventualidad(int posicion, String tipoCasilla) {
+    public CasillaEspecialEventualidad(int posicion, String tipoCasilla,
+            String tipoCasillaEspecialEventualidad) {
         super(posicion, tipoCasilla);
+        this.tipoCasillaEspecialEventualidad = tipoCasillaEspecialEventualidad;
     }
 
     /**
-     * @return the tipoEventualidad
+     * @return the tipoCasillaEspecialEventualidad
      */
-    public String getTipoEventualidad() {
-        return tipoEventualidad;
+    public String getTipoCasillaEspecialEventualidad() {
+        return tipoCasillaEspecialEventualidad;
     }
 
-    /**
-     * @param tipoEventualidad the tipoEventualidad to set
-     */
-    public void setTipoEventualidad(String tipoEventualidad) {
-        this.tipoEventualidad = tipoEventualidad;
+    @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        /*
+         coger una tarjeta segun el tipo de eventualidad y seguir las instrucciones
+         */
     }
-
 }

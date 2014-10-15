@@ -19,4 +19,7 @@ public class Tablero {
         this.casillas = new ArrayList<>();
     }
 
+    public final void fillTablero() {
+
+    }
 }

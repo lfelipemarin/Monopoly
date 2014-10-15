@@ -5,7 +5,7 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
@@ -34,5 +34,5 @@ public abstract class CasillaEspecial extends Casilla {
         this.tipoCasillaEspecial = tipoCasillaEspecial;
     }
 
-    public abstract void ejecutarAccion(Jugador jugador, Banco banco);
+    public abstract void ejecutarAccion(Jugador jugador, Juego juego);
 }
