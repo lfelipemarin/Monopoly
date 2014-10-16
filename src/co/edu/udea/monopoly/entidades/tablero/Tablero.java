@@ -191,4 +191,13 @@ public class Tablero {
                 "Short Line Railroad", 36, 200, 0, 100);
         this.casillas.add(casillaPropiedadServicioFerrocarrilShortLineRailroad);
     }
+
+    /**
+     * @param pos
+     * @return the casilla by position
+     */
+    public Casilla getCasillaByPos(int pos) {
+        return casillas.get(pos);
+    }
+
 }

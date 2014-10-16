@@ -5,6 +5,8 @@
  */
 package co.edu.udea.monopoly.entidades.juego;
 
+import co.edu.udea.monopoly.entidades.tablero.Casilla;
+import co.edu.udea.monopoly.entidades.tablero.Tablero;
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelIrCarcel;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelSalirCarcel;
@@ -32,7 +34,6 @@ import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarEscuela;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarHospital;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarJugadores;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarPobres;
-import co.edu.udea.monopoly.gui.Tablero;
 import java.util.ArrayList;
 
 /**
@@ -60,6 +61,7 @@ public class Juego {
         Jugador jugador = new Jugador(ficha, nombreJugador);
         getFichas().add(ficha);
         getJugadores().add(jugador);
+        turnero.agregarJugador(jugador);
     }
 
     /**
@@ -131,7 +133,7 @@ public class Juego {
         TarjetaCobrarHerencia tarjetaCobrarHerencia = new TarjetaCobrarHerencia();
         TarjetaCobrarAcciones tarjetaCobrarAcciones = new TarjetaCobrarAcciones();
         TarjetaCobrarFestivo tarjetaCobrarFestivo = new TarjetaCobrarFestivo();
-        
+
         //agrega al arreglo tarjetasArcaComun todas las tarjetas
         tarjetasArcaComun.add(tarjetaIrCasillaCobrarInicio);
         tarjetasArcaComun.add(tarjetaCobrarErrorBanco);
@@ -150,7 +152,7 @@ public class Juego {
         tarjetasArcaComun.add(tarjetaCobrarHerencia);
         tarjetasArcaComun.add(tarjetaCobrarAcciones);
         tarjetasArcaComun.add(tarjetaCobrarFestivo);
-        
+
         //tarjetas para el arreglo de Casualidad
         TarjetaIrCasillaCasillaPropiedad tarjetaIrIllinois = new TarjetaIrCasillaCasillaPropiedad();
         TarjetaIrCasillaCobrarInicio tarjetaIrCasillaCobrarInicio1 = new TarjetaIrCasillaCobrarInicio();
@@ -169,7 +171,7 @@ public class Juego {
         TarjetaPagarJugadores tarjetaPagarJugadores = new TarjetaPagarJugadores();
         TarjetaCobrarImpuestosPrestamos tarjetaCobrarImpuestosPrestamos = new TarjetaCobrarImpuestosPrestamos();
         TarjetaCobrarCrucigrama tarjetaCobrarCrucigrama = new TarjetaCobrarCrucigrama();
-        
+
         //agrega al arreglo tarjetasCasualidad todas las tarjetas
         tarjetasCasualidad.add(tarjetaIrIllinois);
         tarjetasCasualidad.add(tarjetaIrCasillaCobrarInicio1);
@@ -188,6 +190,18 @@ public class Juego {
         tarjetasCasualidad.add(tarjetaPagarJugadores);
         tarjetasCasualidad.add(tarjetaCobrarImpuestosPrestamos);
         tarjetasCasualidad.add(tarjetaCobrarCrucigrama);
+    }
+
+    public void jugar() {
+        turnero.proximoJugador();
+        Jugador jugador = turnero.getJugadorEnTurno();
+        int valorDados;
+        valorDados = turnero.tirarDados();
+        jugador.getFicha().aumentarPosicion(valorDados);
+        int pos = jugador.getFicha().getPosicion();
+        if (tablero.getCasillaByPos(pos).getTipoCasilla().equals(Casilla.TIPO_CASILLA_PROPIEDAD)) {
+             
+        }
     }
 
 }
