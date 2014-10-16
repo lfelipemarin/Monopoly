@@ -44,22 +44,24 @@ public class Juego {
     private final Banco banco;
     private final Turnero turnero;
     private final Tablero tablero;
-    private ArrayList<Ficha> fichas;
-    private ArrayList<Tarjeta> tarjetasArcaComun;
-    private ArrayList<Tarjeta> tarjetasCasualidad;
-    private ArrayList<Jugador> jugadores;
+    private final ArrayList<Ficha> fichas;
+    private final ArrayList<Tarjeta> tarjetasArcaComun;
+    private final ArrayList<Tarjeta> tarjetasCasualidad;
 
     public Juego() {
-        banco = new Banco();
-        turnero = new Turnero();
-        tablero = new Tablero();
+        this.banco = new Banco();
+        this.turnero = new Turnero();
+        this.tablero = new Tablero();
+        this.fichas = new ArrayList<>();
+        this.tarjetasArcaComun = new ArrayList<>();
+        this.tarjetasCasualidad = new ArrayList<>();
     }
 
     public void crearJugador(String nombreJugador, String nombreFicha) {
         Ficha ficha = new Ficha(nombreFicha);
         Jugador jugador = new Jugador(ficha, nombreJugador);
         getFichas().add(ficha);
-        getJugadores().add(jugador);
+        getTurnero().agregarJugador(jugador);
     }
 
     /**
@@ -90,25 +92,14 @@ public class Juego {
         return fichas;
     }
 
-    /**
-     * @return the jugadores
-     */
-    public ArrayList<Jugador> getJugadores() {
-        return jugadores;
+    public Tarjeta getTarjetaArcaComun() {
+        int tarjeta = (int) (Math.random() * tarjetasArcaComun.size() - 1);
+        return tarjetasArcaComun.get(tarjeta);
     }
 
-    /**
-     * @return the tarjetasArcaComun
-     */
-    public ArrayList<Tarjeta> getTarjetasArcaComun() {
-        return tarjetasArcaComun;
-    }
-
-    /**
-     * @return the tarjetasCasualidad
-     */
-    public ArrayList<Tarjeta> getTarjetasCasualidad() {
-        return tarjetasCasualidad;
+    public Tarjeta getTarjetaCasualidad() {
+        int tarjeta = (int) (Math.random() * tarjetasCasualidad.size() - 1);
+        return tarjetasCasualidad.get(tarjeta);
     }
 
     public void crearTarjetas() {
@@ -131,7 +122,7 @@ public class Juego {
         TarjetaCobrarHerencia tarjetaCobrarHerencia = new TarjetaCobrarHerencia();
         TarjetaCobrarAcciones tarjetaCobrarAcciones = new TarjetaCobrarAcciones();
         TarjetaCobrarFestivo tarjetaCobrarFestivo = new TarjetaCobrarFestivo();
-        
+
         //agrega al arreglo tarjetasArcaComun todas las tarjetas
         tarjetasArcaComun.add(tarjetaIrCasillaCobrarInicio);
         tarjetasArcaComun.add(tarjetaCobrarErrorBanco);
@@ -150,7 +141,7 @@ public class Juego {
         tarjetasArcaComun.add(tarjetaCobrarHerencia);
         tarjetasArcaComun.add(tarjetaCobrarAcciones);
         tarjetasArcaComun.add(tarjetaCobrarFestivo);
-        
+
         //tarjetas para el arreglo de Casualidad
         TarjetaIrCasillaCasillaPropiedad tarjetaIrIllinois = new TarjetaIrCasillaCasillaPropiedad();
         TarjetaIrCasillaCobrarInicio tarjetaIrCasillaCobrarInicio1 = new TarjetaIrCasillaCobrarInicio();
@@ -169,7 +160,7 @@ public class Juego {
         TarjetaPagarJugadores tarjetaPagarJugadores = new TarjetaPagarJugadores();
         TarjetaCobrarImpuestosPrestamos tarjetaCobrarImpuestosPrestamos = new TarjetaCobrarImpuestosPrestamos();
         TarjetaCobrarCrucigrama tarjetaCobrarCrucigrama = new TarjetaCobrarCrucigrama();
-        
+
         //agrega al arreglo tarjetasCasualidad todas las tarjetas
         tarjetasCasualidad.add(tarjetaIrIllinois);
         tarjetasCasualidad.add(tarjetaIrCasillaCobrarInicio1);

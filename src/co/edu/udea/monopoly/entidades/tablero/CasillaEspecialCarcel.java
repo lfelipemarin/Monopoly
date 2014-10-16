@@ -13,15 +13,16 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  * @author felipe
  */
 public class CasillaEspecialCarcel extends CasillaEspecial {
-
+    
     public CasillaEspecialCarcel(int posicion) {
         super(posicion);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_CARCEL);
     }
-
+    
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jugador.setEstado(Jugador.ESTADO_ENCARCELDADO);
+        jugador.getFicha().setPosicion(this.getPosicion());
     }
-
+    
 }

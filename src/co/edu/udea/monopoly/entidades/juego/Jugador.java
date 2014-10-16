@@ -13,8 +13,9 @@ import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
  */
 public class Jugador {
 
-    private final String ENCARCELDADO = "encarcelado";
-    private final String LIBRE = "libre";
+    public static final String ESTADO_ENCARCELDADO = "encarcelado";
+    public static final String ESTADO_LIBRE = "libre";
+
     private final Cuenta cuenta;
     private String estado;
     private final Ficha ficha;
@@ -68,7 +69,7 @@ public class Jugador {
     public boolean comprarPropiedad(Banco banco, CasillaPropiedad propiedad) {
         if (banco.borrarPorpiedad(propiedad)) {
             if (getCuenta().agregarPropiedad(propiedad)) {
-                propiedad.setEstado(propiedad.ADQUIRIDA);
+                propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
                 return true;
             }
         }
@@ -82,7 +83,7 @@ public class Jugador {
     public boolean comprarPropiedad(Jugador jugador, CasillaPropiedad propiedad) {
         if (jugador.getCuenta().borraPropiedad(propiedad)) {
             if (getCuenta().agregarPropiedad(propiedad)) {
-                propiedad.setEstado(propiedad.ADQUIRIDA);
+                propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
                 return true;
             }
         }
@@ -96,7 +97,7 @@ public class Jugador {
     public boolean venderPropiedad(Banco banco, CasillaPropiedad propiedad) {
         if (getCuenta().borraPropiedad(propiedad)) {
             if (banco.agregarPropiedad(propiedad)) {
-                propiedad.setEstado(propiedad.DISPONIBLE);
+                propiedad.setEstado(CasillaPropiedad.DISPONIBLE);
                 return true;
             }
         }
@@ -110,7 +111,7 @@ public class Jugador {
     public boolean venderPropiedad(Jugador jugador, CasillaPropiedad propiedad) {
         if (getCuenta().borraPropiedad(propiedad)) {
             if (jugador.getCuenta().agregarPropiedad(propiedad)) {
-                propiedad.setEstado(propiedad.ADQUIRIDA);
+                propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
                 return true;
             }
         }
@@ -128,7 +129,7 @@ public class Jugador {
         if (cuenta.getPropiedades().contains(propiedad)) {
             banco.restarDinero(hipoteca);
             getCuenta().agregarDinero(hipoteca);
-            propiedad.setEstado(propiedad.HIPOTECADA);
+            propiedad.setEstado(CasillaPropiedad.HIPOTECADA);
             return true;
         }
         return false;
@@ -144,10 +145,10 @@ public class Jugador {
     public boolean deshipotecar(Banco banco, CasillaPropiedad propiedad) {
         int deshipoteca = (int) (propiedad.getValorHipoteca() * 1.1);
         if (cuenta.getPropiedades().contains(propiedad)) {
-            if (propiedad.getEstado().equals(propiedad.HIPOTECADA)) {
+            if (propiedad.getEstado().equals(CasillaPropiedad.HIPOTECADA)) {
                 if (getCuenta().restarDinero(deshipoteca)) {
                     banco.agregarDinero(deshipoteca);
-                    propiedad.setEstado(propiedad.ADQUIRIDA);
+                    propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
                     return true;
                 }
             }

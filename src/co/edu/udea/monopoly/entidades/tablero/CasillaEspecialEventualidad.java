@@ -34,10 +34,13 @@ public class CasillaEspecialEventualidad extends CasillaEspecial {
 
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        if (tipoCasillaEspecialEventualidad.equals("Arca Comun")) {
-            juego.getTarjetasArcaComun();
-        } else {
-            juego.getTarjetasCasualidad();
+        switch (tipoCasillaEspecialEventualidad) {
+            case CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN:
+                juego.getTarjetaArcaComun().ejecutarAccion();
+                break;
+            case CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD:
+                juego.getTarjetaCasualidad().ejecutarAccion();
+                break;
         }
     }
 }

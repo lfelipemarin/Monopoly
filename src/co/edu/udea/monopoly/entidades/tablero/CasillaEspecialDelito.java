@@ -24,7 +24,7 @@ public class CasillaEspecialDelito extends CasillaEspecial {
         //mueve la ficha hasta la posicion 31 hasta la posicion 11 y el estado del 
         //jugador cambia de libre a preso.
         jugador.getFicha().setPosicion(11);
-        jugador.setEstado("preso");
+        jugador.setEstado(Jugador.ESTADO_ENCARCELDADO);
     }
 
 }
