@@ -33,16 +33,22 @@ public class Turnero {
     }
 
     public void proximoJugador() {
-        for (int i = 0; i < getCicloTurnos().size(); i++) {
-            if (getCicloTurnos().get(i).getJugador().equals(getJugadorEnTurno())) {
-                setJugadorEnTurno(getCicloTurnos().get(i + 1).getJugador());
-                if (getCicloTurnos().get(i + 1).getTurnosPorPerder() > 0) {
-                    getCicloTurnos().get(i + 1).bajarSancion();
-                    proximoJugador();
-                    return;
-                }
-            }
-        }
+        getCicloTurnos().add(getCicloTurnos().get(0));
+        getCicloTurnos().remove(0);
+        setJugadorEnTurno(getCicloTurnos().get(0).getJugador());
+//        Jugador j;
+//        for (int i = 0; i < getCicloTurnos().size(); i++) {
+//            j = getCicloTurnos().get(i).getJugador();
+//            if (j.equals(getJugadorEnTurno())) {
+//                CicloTurnos tuplaJugadorTurnosPorPerder = getCicloTurnos().get(i + 1);
+//                setJugadorEnTurno(tuplaJugadorTurnosPorPerder.getJugador());
+//                if (tuplaJugadorTurnosPorPerder.getTurnosPorPerder() == 0) {
+//                    return;
+//                } else {
+//                    proximoJugador();
+//                }
+//            }
+//        }
     }
 
     /**

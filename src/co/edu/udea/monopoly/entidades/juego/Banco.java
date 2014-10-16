@@ -19,9 +19,9 @@ public class Banco {
     private final ArrayList<Mejora> mejoras;
     private final ArrayList<CasillaPropiedad> propiedades;
 
-    public Banco() {
+    public Banco(ArrayList propiedades) {
         this.mejoras = new ArrayList<>();
-        this.propiedades = new ArrayList<>();
+        this.propiedades = propiedades;
         this.dinero = 100000000; //cien millones
     }
 

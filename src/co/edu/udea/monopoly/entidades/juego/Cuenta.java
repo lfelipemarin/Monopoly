@@ -19,6 +19,7 @@ public class Cuenta {
 
     public Cuenta() {
         this.propiedades = new ArrayList<>();
+        this.dinero = 1000;
     }
 
     public boolean agregarPropiedad(CasillaPropiedad p) {

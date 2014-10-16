@@ -7,7 +7,6 @@ package co.edu.udea.monopoly.entidades.juego;
 
 import co.edu.udea.monopoly.entidades.tablero.Casilla;
 import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
-import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadServicio;
 import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadTerreno;
 import co.edu.udea.monopoly.entidades.tablero.Tablero;
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
@@ -39,8 +38,10 @@ import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarJugadores;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarPobres;
 import co.edu.udea.monopoly.gui.GUI;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -57,24 +58,51 @@ public class Juego {
     private final ArrayList<Tarjeta> tarjetasCasualidad;
 
     public Juego() {
-        this.banco = new Banco();
         this.turnero = new Turnero();
         this.tablero = new Tablero();
+        this.banco = new Banco(tablero.getCasillas());
         this.gui = new GUI();
         this.fichas = new ArrayList<>();
         this.tarjetasArcaComun = new ArrayList<>();
         this.tarjetasCasualidad = new ArrayList<>();
+        crearJugador("juno", "funo");
+        crearJugador("jdos", "fdos");
+        crearJugador("jtres", "ftres");
+        this.gui.getJButtonLanzar().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jugar();
+            }
+        });
+        this.fillTablaJugadores();
+        this.turnero.setJugadorEnTurno(turnero.getCicloTurnos().get(0).getJugador());
     }
 
-    public void ActionListener(ActionEvent e) {
-
-    }
-
-    public void crearJugador(String nombreJugador, String nombreFicha) {
+    public final void crearJugador(String nombreJugador, String nombreFicha) {
         Ficha ficha = new Ficha(nombreFicha);
         Jugador jugador = new Jugador(ficha, nombreJugador);
         getFichas().add(ficha);
         getTurnero().agregarJugador(jugador);
+    }
+
+    public final void fillTablaJugadores() {
+        DefaultTableModel modelo = (DefaultTableModel) gui.getTablaJugadores().getModel();
+        modelo.setRowCount(0);
+        for (CicloTurnos c : turnero.getCicloTurnos()) {
+            Object[] row = new Object[2];
+            row[0] = c.getJugador().getNombre();
+            row[1] = c.getJugador().getFicha().getPosicion();
+            modelo.addRow(row);
+        }        
+        gui.getTablaJugadores().setModel(modelo);
+        gui.getTablaJugadores().changeSelection(0, 0, false, false);
+        gui.getTablaJugadores().repaint();
+        gui.getTablaJugadores().revalidate();
+    }
+
+    public void resaltarJugadorEnTurno() {
+
     }
 
     /**
@@ -185,7 +213,7 @@ public class Juego {
         tarjetasCasualidad.add(tarjetaCarcelSalirCarcel1);
         tarjetasCasualidad.add(tarjetaIrCasillaTresCasillasAtras);
         tarjetasCasualidad.add(tarjetaCarcelIrCarcel1);
-        tarjetasCasualidad.add(tarjetaPagarArreglosMejoras);
+//        tarjetasCasualidad.add(tarjetaPagarArreglosMejoras);
         tarjetasCasualidad.add(tarjetaPagarPobres);
         tarjetasCasualidad.add(tarjetaIrCasillaReadingFerro);
         tarjetasCasualidad.add(TarjetaIrCasillaBoardWalk);
@@ -195,44 +223,58 @@ public class Juego {
     }
 
     public void jugar() {
-        turnero.proximoJugador();
+
         Jugador jugador = turnero.getJugadorEnTurno();
         int valorDados;
         valorDados = turnero.tirarDados();
+//        valorDados = 16;
         jugador.getFicha().aumentarPosicion(valorDados);
         int pos = jugador.getFicha().getPosicion();
         Casilla casilla = tablero.getCasillaByPos(pos);
+        JOptionPane.showMessageDialog(gui, "El jugador " + jugador.getNombre() + "\ncalló en la posicion " + pos);
         switch (casilla.getTipoCasilla()) {
             case Casilla.TIPO_CASILLA_PROPIEDAD:
+                JOptionPane.showMessageDialog(gui, "Propiedad");
                 CasillaPropiedad propiedad = (CasillaPropiedad) casilla;
                 switch (propiedad.getTipoCasillaPropiedad()) {
                     case CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_TERRENO:
+                        JOptionPane.showMessageDialog(gui, "Terreno");
                         CasillaPropiedadTerreno terreno = (CasillaPropiedadTerreno) propiedad;
                         switch (terreno.getEstado()) {
                             case CasillaPropiedad.ADQUIRIDA:
+                                JOptionPane.showMessageDialog(gui, "Adquirida");
                                 if (!jugador.getCuenta().getPropiedades().contains(terreno)) {
+                                    JOptionPane.showMessageDialog(gui, "Paga renta.");
                                     terreno.getPropietario().cobrarRenta(terreno, jugador);
+                                    return;
                                 }
+                                JOptionPane.showMessageDialog(gui, "Propia, no paga renta.");
                                 break;
                             case CasillaPropiedad.DISPONIBLE:
-                                if (JOptionPane.showConfirmDialog(gui, "Desea comprar estao propiedad?") == 1) {
+                                JOptionPane.showMessageDialog(gui, "Disponible");
+                                int opcion = JOptionPane.showConfirmDialog(gui, "Desea comprar esta propiedad?");
+                                if (opcion == 0) {
                                     jugador.comprarPropiedad(banco, terreno);
                                 }
                                 break;
-                                
+
                             case CasillaPropiedad.HIPOTECADA:
-                                JOptionPane.showMessageDialog(gui, "Propiedad hipotecada.\n"
+                                JOptionPane.showMessageDialog(gui, "Hhipotecada.\n"
                                         + "no se paga renta.");
                                 break;
                         }
                         break;
                     case CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_SERVICIO:
-                        CasillaPropiedadServicio servicio = (CasillaPropiedadServicio) propiedad;
+                        JOptionPane.showMessageDialog(gui, "Servicio");
+//                        CasillaPropiedadServicio servicio = (CasillaPropiedadServicio) propiedad;
                         break;
-                }   break;
+                }
+                break;
             case Casilla.TIPO_CASILLA_ESPECIAL:
+                JOptionPane.showMessageDialog(gui, "Especial");
                 break;
         }
+        turnero.proximoJugador();
+        fillTablaJugadores();
     }
-
 }

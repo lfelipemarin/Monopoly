@@ -27,46 +27,46 @@ public class Tablero {
 
     public final void crearCasillasEspeciales() {
         Casilla casillaEspecialInicio = new CasillaEspecialParadaLibre(1);
-        this.casillas.add(casillaEspecialInicio);
+        this.getCasillas().add(casillaEspecialInicio);
 
         Casilla casillaEspecialEventualidadArcaComunal3 = new CasillaEspecialEventualidad(3,
                 CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
-        this.casillas.add(casillaEspecialEventualidadArcaComunal3);
+        this.getCasillas().add(casillaEspecialEventualidadArcaComunal3);
 
         Casilla casillaEspecialImpuesto5 = new CasillaEspecialImpuesto(5);
-        this.casillas.add(casillaEspecialImpuesto5);
+        this.getCasillas().add(casillaEspecialImpuesto5);
 
         Casilla casillaEspecialEventualidadCasualidad8 = new CasillaEspecialEventualidad(8,
                 CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
-        this.casillas.add(casillaEspecialEventualidadCasualidad8);
+        this.getCasillas().add(casillaEspecialEventualidadCasualidad8);
 
         Casilla casillaEspecialCarcel = new CasillaEspecialCarcel(11);
-        this.casillas.add(casillaEspecialCarcel);
+        this.getCasillas().add(casillaEspecialCarcel);
 
         Casilla casillaEspecialEventualidadArcaComun18 = new CasillaEspecialEventualidad(18,
                 CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
-        this.casillas.add(casillaEspecialEventualidadArcaComun18);
+        this.getCasillas().add(casillaEspecialEventualidadArcaComun18);
 
         Casilla casillaespecialParadaLibre = new CasillaEspecialParadaLibre(21);
-        this.casillas.add(casillaespecialParadaLibre);
+        this.getCasillas().add(casillaespecialParadaLibre);
 
         Casilla casillaEspecialCasualidad23 = new CasillaEspecialEventualidad(23,
                 CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
-        this.casillas.add(casillaEspecialCasualidad23);
+        this.getCasillas().add(casillaEspecialCasualidad23);
 
         Casilla casillaEspecialIrCarcel = new CasillaEspecialDelito(31);
-        this.casillas.add(casillaEspecialIrCarcel);
+        this.getCasillas().add(casillaEspecialIrCarcel);
 
         Casilla casillaEspecialEventualidadArcaComun34 = new CasillaEspecialEventualidad(34,
                 CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
-        this.casillas.add(casillaEspecialEventualidadArcaComun34);
+        this.getCasillas().add(casillaEspecialEventualidadArcaComun34);
 
         Casilla casillaEspecialEventualidadCasualidad37 = new CasillaEspecialEventualidad(37,
                 CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
-        this.casillas.add(casillaEspecialEventualidadCasualidad37);
+        this.getCasillas().add(casillaEspecialEventualidadCasualidad37);
 
         Casilla casillaEspecialImpuesto39 = new CasillaEspecialImpuesto(39);
-        this.casillas.add(casillaEspecialImpuesto39);
+        this.getCasillas().add(casillaEspecialImpuesto39);
     }
 
     public final void crearCasillasPropieades() {
@@ -75,121 +75,121 @@ public class Tablero {
          */
         Casilla casillaPropiedadTerrenoMediterraneanAve = new CasillaPropiedadTerreno(
                 "Mediterranean Ave.", 2, 60, 2, 30, 50, 50, CasillaPropiedadTerreno.COLOR_PURPLE);
-        this.casillas.add(casillaPropiedadTerrenoMediterraneanAve);
+        this.getCasillas().add(casillaPropiedadTerrenoMediterraneanAve);
 
         Casilla casillaPropiedadTerrenoBalticAve = new CasillaPropiedadTerreno(
                 "Baltic Ave.", 4, 60, 2, 30, 50, 50, CasillaPropiedadTerreno.COLOR_PURPLE);
-        this.casillas.add(casillaPropiedadTerrenoBalticAve);
+        this.getCasillas().add(casillaPropiedadTerrenoBalticAve);
 
         Casilla casillaPropiedadTerrenoOrientalAve = new CasillaPropiedadTerreno(
                 "Oriental Ave.", 7, 100, 6, 50, 50, 50, CasillaPropiedadTerreno.COLOR_LIGHT_GREEN);
-        this.casillas.add(casillaPropiedadTerrenoOrientalAve);
+        this.getCasillas().add(casillaPropiedadTerrenoOrientalAve);
 
         Casilla casillaPropiedadTerrenoVermontAve = new CasillaPropiedadTerreno(
                 "Vermont Ave.", 9, 100, 6, 50, 50, 50, CasillaPropiedadTerreno.COLOR_LIGHT_GREEN);
-        this.casillas.add(casillaPropiedadTerrenoVermontAve);
+        this.getCasillas().add(casillaPropiedadTerrenoVermontAve);
 
         Casilla casillaPropiedadTerrenoConneticutAve = new CasillaPropiedadTerreno(
                 "Conneticut Ave.", 10, 120, 6, 50, 50, 50, CasillaPropiedadTerreno.COLOR_LIGHT_GREEN);
-        this.casillas.add(casillaPropiedadTerrenoConneticutAve);
+        this.getCasillas().add(casillaPropiedadTerrenoConneticutAve);
 
         Casilla casillaPropiedadTerrenoStCharlesPlace = new CasillaPropiedadTerreno(
                 "St. Charles Place.", 12, 140, 10, 50, 50, 50, CasillaPropiedadTerreno.COLOR_VIOLET);
-        this.casillas.add(casillaPropiedadTerrenoStCharlesPlace);
+        this.getCasillas().add(casillaPropiedadTerrenoStCharlesPlace);
 
         Casilla casillaPropiedadTerrenoStatesAve = new CasillaPropiedadTerreno(
                 "States Ave.", 14, 140, 10, 70, 100, 100, CasillaPropiedadTerreno.COLOR_VIOLET);
-        this.casillas.add(casillaPropiedadTerrenoStatesAve);
+        this.getCasillas().add(casillaPropiedadTerrenoStatesAve);
 
         Casilla casillaPropiedadTerrenoVirginiaAve = new CasillaPropiedadTerreno(
                 "Virginia Ave.", 15, 160, 12, 80, 100, 100, CasillaPropiedadTerreno.COLOR_VIOLET);
-        this.casillas.add(casillaPropiedadTerrenoVirginiaAve);
+        this.getCasillas().add(casillaPropiedadTerrenoVirginiaAve);
 
         Casilla casillaPropiedadTerrenoStJamesPlace = new CasillaPropiedadTerreno(
                 "St. James Place", 17, 180, 14, 90, 100, 100, CasillaPropiedadTerreno.COLOR_ORANGE);
-        this.casillas.add(casillaPropiedadTerrenoStJamesPlace);
+        this.getCasillas().add(casillaPropiedadTerrenoStJamesPlace);
 
         Casilla casillaPropiedadTerrenoTennesseeAve = new CasillaPropiedadTerreno(
                 "Tennessee Ave.", 19, 180, 14, 90, 100, 100, CasillaPropiedadTerreno.COLOR_ORANGE);
-        this.casillas.add(casillaPropiedadTerrenoTennesseeAve);
+        this.getCasillas().add(casillaPropiedadTerrenoTennesseeAve);
 
         Casilla casillaPropiedadTerrenoNewYork = new CasillaPropiedadTerreno(
                 "New York Ave.", 20, 200, 16, 90, 100, 100, CasillaPropiedadTerreno.COLOR_ORANGE);
-        this.casillas.add(casillaPropiedadTerrenoNewYork);
+        this.getCasillas().add(casillaPropiedadTerrenoNewYork);
 
         Casilla casillaPropiedadTerrenoKentuckyAve = new CasillaPropiedadTerreno(
                 "Kentucky Ave.", 22, 220, 18, 110, 150, 150, CasillaPropiedadTerreno.COLOR_RED);
-        this.casillas.add(casillaPropiedadTerrenoKentuckyAve);
+        this.getCasillas().add(casillaPropiedadTerrenoKentuckyAve);
 
         Casilla casillaPropiedadTerrenoIndianaAve = new CasillaPropiedadTerreno(
                 "Indiana Ave.", 24, 220, 18, 110, 150, 150, CasillaPropiedadTerreno.COLOR_RED);
-        this.casillas.add(casillaPropiedadTerrenoIndianaAve);
+        this.getCasillas().add(casillaPropiedadTerrenoIndianaAve);
 
         Casilla casillaPropiedadTerrenoIllinoisAve = new CasillaPropiedadTerreno(
                 "Illinois Ave.", 25, 240, 20, 120, 150, 150, CasillaPropiedadTerreno.COLOR_RED);
-        this.casillas.add(casillaPropiedadTerrenoIllinoisAve);
+        this.getCasillas().add(casillaPropiedadTerrenoIllinoisAve);
 
         Casilla casillaPropiedadTerrenoAtlanticAve = new CasillaPropiedadTerreno(
                 "Atlantic Ave.", 27, 260, 22, 130, 150, 150, CasillaPropiedadTerreno.COLOR_YELLOW);
-        this.casillas.add(casillaPropiedadTerrenoAtlanticAve);
+        this.getCasillas().add(casillaPropiedadTerrenoAtlanticAve);
 
         Casilla casillaPropiedadTerrenoVentorAve = new CasillaPropiedadTerreno(
                 "Ventor Ave.", 28, 260, 22, 130, 150, 150, CasillaPropiedadTerreno.COLOR_YELLOW);
-        this.casillas.add(casillaPropiedadTerrenoVentorAve);
+        this.getCasillas().add(casillaPropiedadTerrenoVentorAve);
 
         Casilla casillaPropiedadTerrenoMarvinGardens = new CasillaPropiedadTerreno(
                 "Marvin Gardens", 30, 280, 22, 140, 150, 150, CasillaPropiedadTerreno.COLOR_YELLOW);
-        this.casillas.add(casillaPropiedadTerrenoMarvinGardens);
+        this.getCasillas().add(casillaPropiedadTerrenoMarvinGardens);
 
         Casilla casillaPropiedadTerrenoPacificAve = new CasillaPropiedadTerreno(
                 "Pacific Ave.", 32, 300, 26, 150, 200, 200, CasillaPropiedadTerreno.COLOR_DARK_GREEN);
-        this.casillas.add(casillaPropiedadTerrenoPacificAve);
+        this.getCasillas().add(casillaPropiedadTerrenoPacificAve);
 
         Casilla casillaPropiedadTerrenoNorthCarolinaAve = new CasillaPropiedadTerreno(
                 "North Carolina Ave.", 33, 300, 26, 150, 200, 200, CasillaPropiedadTerreno.COLOR_DARK_GREEN);
-        this.casillas.add(casillaPropiedadTerrenoNorthCarolinaAve);
+        this.getCasillas().add(casillaPropiedadTerrenoNorthCarolinaAve);
 
         Casilla casillaPropiedadTerrenoPennsylvaniaAve = new CasillaPropiedadTerreno(
                 "Pennsylvania Ave.", 35, 320, 28, 160, 200, 200, CasillaPropiedadTerreno.COLOR_DARK_GREEN);
-        this.casillas.add(casillaPropiedadTerrenoPennsylvaniaAve);
+        this.getCasillas().add(casillaPropiedadTerrenoPennsylvaniaAve);
 
         Casilla casillaPropiedadTerrenoParkPlace = new CasillaPropiedadTerreno(
                 "Park Place", 38, 350, 35, 175, 200, 200, CasillaPropiedadTerreno.COLOR_DARK_BLUE);
-        this.casillas.add(casillaPropiedadTerrenoParkPlace);
+        this.getCasillas().add(casillaPropiedadTerrenoParkPlace);
 
         Casilla casillaPropiedadTerrenoBoardWalk = new CasillaPropiedadTerreno(
                 "Board Walk", 40, 400, 50, 200, 200, 200, CasillaPropiedadTerreno.COLOR_DARK_BLUE);
-        this.casillas.add(casillaPropiedadTerrenoBoardWalk);
+        this.getCasillas().add(casillaPropiedadTerrenoBoardWalk);
 
         /*
          Casillas tipo propiedad servicio publico
          */
         Casilla casillaPropiedadServicioPublicoElectricCompany13 = new CasillaPropiedadServicioPublico(
                 "Electric Company", 13, 150, 0, 75);
-        this.casillas.add(casillaPropiedadServicioPublicoElectricCompany13);
+        this.getCasillas().add(casillaPropiedadServicioPublicoElectricCompany13);
 
         Casilla casillaPropiedadServicioPublicoWaterWorks29 = new CasillaPropiedadServicioPublico(
                 "Water Works", 29, 150, 0, 75);
-        this.casillas.add(casillaPropiedadServicioPublicoWaterWorks29);
+        this.getCasillas().add(casillaPropiedadServicioPublicoWaterWorks29);
 
         /*
          Casillas propiedad servicio ferrocarril
          */
         Casilla casillaPropiedadServicioFerrocarrilReadingRailroad = new CasillaPropiedadServicioFerrocarril(
                 "Reading Railroad", 6, 200, 0, 100);
-        this.casillas.add(casillaPropiedadServicioFerrocarrilReadingRailroad);
+        this.getCasillas().add(casillaPropiedadServicioFerrocarrilReadingRailroad);
 
         Casilla casillaPropiedadServicioFerrocarrilPennsylvaniaRailroad = new CasillaPropiedadServicioFerrocarril(
-                "Reading Railroad", 6, 200, 0, 100);
-        this.casillas.add(casillaPropiedadServicioFerrocarrilPennsylvaniaRailroad);
+                "Pennsylvania Railroad", 16, 200, 0, 100);
+        this.getCasillas().add(casillaPropiedadServicioFerrocarrilPennsylvaniaRailroad);
 
         Casilla casillaPropiedadServicioFerrocarrilBnORailroad = new CasillaPropiedadServicioFerrocarril(
                 "B. & O. Railroad", 26, 200, 0, 100);
-        this.casillas.add(casillaPropiedadServicioFerrocarrilBnORailroad);
+        this.getCasillas().add(casillaPropiedadServicioFerrocarrilBnORailroad);
 
         Casilla casillaPropiedadServicioFerrocarrilShortLineRailroad = new CasillaPropiedadServicioFerrocarril(
                 "Short Line Railroad", 36, 200, 0, 100);
-        this.casillas.add(casillaPropiedadServicioFerrocarrilShortLineRailroad);
+        this.getCasillas().add(casillaPropiedadServicioFerrocarrilShortLineRailroad);
     }
 
     /**
@@ -197,7 +197,18 @@ public class Tablero {
      * @return the casilla by position
      */
     public Casilla getCasillaByPos(int pos) {
-        return casillas.get(pos);
+        for (Casilla c : getCasillas()) {
+            if (c.getPosicion() == pos) {
+                return c;
+            }
+        }
+        return null;
     }
 
+    /**
+     * @return the casillas
+     */
+    public ArrayList<Casilla> getCasillas() {
+        return casillas;
+    }
 }

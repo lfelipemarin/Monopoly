@@ -37,6 +37,7 @@ public abstract class CasillaPropiedad extends Casilla {
         this.rentaBase = rentaBase;
         this.valor = valor;
         this.valorHipoteca = valorHipoteca;
+        this.estado = CasillaPropiedad.DISPONIBLE;
     }
 
     /**
