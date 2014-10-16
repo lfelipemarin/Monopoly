@@ -13,19 +13,20 @@ import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadTerreno;
  * @author felipe
  */
 public class Jugador {
-    
+
     public static final String ESTADO_ENCARCELDADO = "encarcelado";
     public static final String ESTADO_LIBRE = "libre";
-    
+
     private final Cuenta cuenta;
     private String estado;
     private final Ficha ficha;
     private final String nombre;
-    
+
     public Jugador(Ficha ficha, String nombre) {
         this.cuenta = new Cuenta();
         this.ficha = ficha;
         this.nombre = nombre;
+        this.estado = Jugador.ESTADO_LIBRE;
     }
 
     /**
@@ -163,7 +164,7 @@ public class Jugador {
         }
         return false;
     }
-    
+
     public Boolean cobrarRenta(CasillaPropiedad propiedad, Jugador jugador) {
         int renta = propiedad.getRenta();
         if (jugador.getCuenta().restarDinero(renta)) {
@@ -172,7 +173,7 @@ public class Jugador {
         }
         return false;
     }
-    
+
     public void pagarRenta(CasillaPropiedadTerreno propiedad) {
     }
 }

@@ -65,9 +65,6 @@ public class Juego {
         this.fichas = new ArrayList<>();
         this.tarjetasArcaComun = new ArrayList<>();
         this.tarjetasCasualidad = new ArrayList<>();
-        crearJugador("juno", "funo");
-        crearJugador("jdos", "fdos");
-        crearJugador("jtres", "ftres");
         this.gui.getJButtonLanzar().addActionListener(new ActionListener() {
 
             @Override
@@ -75,8 +72,46 @@ public class Juego {
                 jugar();
             }
         });
-        this.fillTablaJugadores();
-        this.turnero.setJugadorEnTurno(turnero.getCicloTurnos().get(0).getJugador());
+        this.gui.getJButtonRegistrar().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    String nombre = gui.getJTextFieldUsuario().getText();
+                    if (nombre.length() > 1) {
+                        crearJugador(nombre, "Ficha" + nombre);
+                        fillTablaJugadores();
+                        habilitarJuego();
+                    } else {
+                        JOptionPane.showMessageDialog(gui, ":(");
+                    }
+                    gui.getJTextFieldUsuario().setText("");
+                    gui.getJTextFieldUsuario().requestFocus();
+                } catch (Exception ee) {
+                    JOptionPane.showMessageDialog(gui, "Ingrese un nombre válido.");
+                }
+            }
+        });
+        this.gui.getJButtonIniciar().addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                turnero.setJugadorEnTurno(turnero.getCicloTurnos().get(0).getJugador());
+                gui.getJButtonIniciar().setEnabled(false);
+                gui.getJButtonRegistrar().setEnabled(false);
+                gui.getJTextFieldUsuario().setEnabled(false);
+                gui.getJButtonLanzar().setEnabled(true);
+            }
+        });
+    }
+
+    public void habilitarJuego() {
+        if (turnero.getCicloTurnos().size() > 1) {
+            gui.getJButtonIniciar().setEnabled(true);
+        }
+        if (turnero.getCicloTurnos().size() > 7) {
+            gui.getJButtonRegistrar().setEnabled(false);
+        }
     }
 
     public final void crearJugador(String nombreJugador, String nombreFicha) {
@@ -90,11 +125,14 @@ public class Juego {
         DefaultTableModel modelo = (DefaultTableModel) gui.getTablaJugadores().getModel();
         modelo.setRowCount(0);
         for (CicloTurnos c : turnero.getCicloTurnos()) {
-            Object[] row = new Object[2];
+            Object[] row = new Object[5];
             row[0] = c.getJugador().getNombre();
             row[1] = c.getJugador().getFicha().getPosicion();
+            row[2] = c.getJugador().getCuenta().getDinero();
+            row[3] = c.getJugador().getCuenta().getPropiedades().size();
+            row[4] = c.getJugador().getEstado();
             modelo.addRow(row);
-        }        
+        }
         gui.getTablaJugadores().setModel(modelo);
         gui.getTablaJugadores().changeSelection(0, 0, false, false);
         gui.getTablaJugadores().repaint();
@@ -231,7 +269,7 @@ public class Juego {
         jugador.getFicha().aumentarPosicion(valorDados);
         int pos = jugador.getFicha().getPosicion();
         Casilla casilla = tablero.getCasillaByPos(pos);
-        JOptionPane.showMessageDialog(gui, "El jugador " + jugador.getNombre() + "\ncalló en la posicion " + pos);
+        JOptionPane.showMessageDialog(gui, "El jugador " + jugador.getNombre() + " sacó " + valorDados + ".\nCalló en la posicion " + pos + ".");
         switch (casilla.getTipoCasilla()) {
             case Casilla.TIPO_CASILLA_PROPIEDAD:
                 JOptionPane.showMessageDialog(gui, "Propiedad");

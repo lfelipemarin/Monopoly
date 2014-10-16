@@ -6,7 +6,11 @@
 package co.edu.udea.monopoly.gui;
 
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -19,17 +23,40 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
+//        setLookAndFeel();
         setExtendedState(MAXIMIZED_BOTH);
         this.getRootPane().setDefaultButton(jButtonLanzar);
+        this.jButtonLanzar.setEnabled(false);
+        this.jButtonIniciar.setEnabled(false);
         this.setVisible(true);
     }
+
+//    public static void setLookAndFeel() {
+//        try {
+//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+//            JOptionPane.showMessageDialog(null, "Error cargando estilo visual.");
+//        }
+//    }
 
     public JButton getJButtonLanzar() {
         return this.jButtonLanzar;
     }
-    
-    public JTable getTablaJugadores(){
+
+    public JTable getTablaJugadores() {
         return this.jTableJugadores;
+    }
+
+    public JTextField getJTextFieldUsuario() {
+        return jTextFieldUsuario;
+    }
+
+    public JButton getJButtonRegistrar() {
+        return jButtonRegistrar;
+    }
+
+    public JButton getJButtonIniciar() {
+        return jButtonIniciar;
     }
 
     /**
@@ -87,6 +114,11 @@ public class GUI extends javax.swing.JFrame {
         jScrollPaneTablaJugadores = new javax.swing.JScrollPane();
         jTableJugadores = new javax.swing.JTable();
         jButtonLanzar = new javax.swing.JButton();
+        jPanelIniciarJuego = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldUsuario = new javax.swing.JTextField();
+        jButtonRegistrar = new javax.swing.JButton();
+        jButtonIniciar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menMenu = new javax.swing.JMenu();
         itmNuevoJuego = new javax.swing.JMenuItem();
@@ -99,6 +131,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanelTbalero.setLayout(new java.awt.GridBagLayout());
 
+        lblGo.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblGo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGo.setText("1 GO");
         lblGo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -114,6 +147,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblGo, gridBagConstraints);
 
+        lblMedAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblMedAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMedAve.setText("2 Mediterranean Ave. ");
         lblMedAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -129,6 +163,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblMedAve, gridBagConstraints);
 
+        lblArcaCasilla3.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblArcaCasilla3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblArcaCasilla3.setText("3 Arca Común");
         lblArcaCasilla3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -144,6 +179,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblArcaCasilla3, gridBagConstraints);
 
+        lblBalticAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblBalticAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBalticAve.setText("4 Bastic Ave.");
         lblBalticAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -159,6 +195,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblBalticAve, gridBagConstraints);
 
+        lblTaxCasilla5.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblTaxCasilla5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTaxCasilla5.setText("5 Impuestos");
         lblTaxCasilla5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -174,6 +211,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblTaxCasilla5, gridBagConstraints);
 
+        lblFerroCasilla6.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblFerroCasilla6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFerroCasilla6.setText("6 Ferrocarril Reading");
         lblFerroCasilla6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -189,6 +227,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblFerroCasilla6, gridBagConstraints);
 
+        lblOrientalAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblOrientalAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblOrientalAve.setText("7 Oriental Ave.");
         lblOrientalAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -204,6 +243,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblOrientalAve, gridBagConstraints);
 
+        lblCasuCasilla8.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCasuCasilla8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCasuCasilla8.setText("8 Casualidad");
         lblCasuCasilla8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -219,6 +259,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCasuCasilla8, gridBagConstraints);
 
+        lblVermontAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblVermontAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVermontAve.setText("9 Vermont Ave.");
         lblVermontAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -234,6 +275,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblVermontAve, gridBagConstraints);
 
+        lblConnAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblConnAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblConnAve.setText("10 Connecticut Ave.");
         lblConnAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -249,6 +291,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblConnAve, gridBagConstraints);
 
+        lblCarcel.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCarcel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCarcel.setText("11 Visita/Carcel");
         lblCarcel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -262,6 +305,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCarcel, gridBagConstraints);
 
+        lblCharles.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCharles.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCharles.setText("12 St. Charles Place");
         lblCharles.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -277,6 +321,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCharles, gridBagConstraints);
 
+        lblCompCasilla13.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCompCasilla13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCompCasilla13.setText("13 Compañía Electrica");
         lblCompCasilla13.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -292,6 +337,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCompCasilla13, gridBagConstraints);
 
+        lblStatesAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblStatesAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblStatesAve.setText("14 States Ave.");
         lblStatesAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -307,6 +353,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblStatesAve, gridBagConstraints);
 
+        lblVirgAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblVirgAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVirgAve.setText("15 Virginia Ave");
         lblVirgAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -322,6 +369,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblVirgAve, gridBagConstraints);
 
+        lblFerroCasilla16.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblFerroCasilla16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFerroCasilla16.setText("16 Ferrocarril Pennsylvania");
         lblFerroCasilla16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -337,6 +385,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblFerroCasilla16, gridBagConstraints);
 
+        lblJames.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblJames.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblJames.setText("17 St. James Place");
         lblJames.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -352,6 +401,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblJames, gridBagConstraints);
 
+        lblArcaCasilla18.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblArcaCasilla18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblArcaCasilla18.setText("18 Arca Común");
         lblArcaCasilla18.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -367,6 +417,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblArcaCasilla18, gridBagConstraints);
 
+        lblTennAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblTennAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTennAve.setText("19 Tennessee Ave.");
         lblTennAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -382,6 +433,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblTennAve, gridBagConstraints);
 
+        lblNYAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblNYAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNYAve.setText("20 New York Ave.");
         lblNYAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -397,6 +449,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblNYAve, gridBagConstraints);
 
+        lblParadaLibre.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblParadaLibre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblParadaLibre.setText("21 Parada Libre");
         lblParadaLibre.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -412,6 +465,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblParadaLibre, gridBagConstraints);
 
+        lblKentuckyAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblKentuckyAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblKentuckyAve.setText("22 Kentucky Ave.");
         lblKentuckyAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -427,6 +481,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblKentuckyAve, gridBagConstraints);
 
+        lblCasualCasilla23.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCasualCasilla23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCasualCasilla23.setText("23 Casualidad");
         lblCasualCasilla23.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -442,6 +497,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCasualCasilla23, gridBagConstraints);
 
+        lblIndianaAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblIndianaAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIndianaAve.setText("24 Indiana Ave.");
         lblIndianaAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -457,6 +513,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblIndianaAve, gridBagConstraints);
 
+        lbIlliAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lbIlliAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbIlliAve.setText("25 Illinois Ave.");
         lbIlliAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -472,6 +529,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lbIlliAve, gridBagConstraints);
 
+        lblFerroCasilla26.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblFerroCasilla26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFerroCasilla26.setText("26 Ferrocarril B&Q");
         lblFerroCasilla26.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -487,6 +545,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblFerroCasilla26, gridBagConstraints);
 
+        lblAtlAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblAtlAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAtlAve.setText("27 Atlantic Ave.");
         lblAtlAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -502,6 +561,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblAtlAve, gridBagConstraints);
 
+        lblVentnorAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblVentnorAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblVentnorAve.setText("28 Ventnor Ave.");
         lblVentnorAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -517,6 +577,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblVentnorAve, gridBagConstraints);
 
+        lblCompCasilla29.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCompCasilla29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCompCasilla29.setText("29 Compañía Agua");
         lblCompCasilla29.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -532,6 +593,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCompCasilla29, gridBagConstraints);
 
+        lblMarvin.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblMarvin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMarvin.setText("30 Marvin Gardens");
         lblMarvin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -547,6 +609,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblMarvin, gridBagConstraints);
 
+        lblIrCarcel.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblIrCarcel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIrCarcel.setText("31 Ir a la Carcel");
         lblIrCarcel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -562,6 +625,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblIrCarcel, gridBagConstraints);
 
+        lblPacificAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblPacificAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPacificAve.setText("32 Pacific Ave.");
         lblPacificAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -577,6 +641,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblPacificAve, gridBagConstraints);
 
+        lblNCAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblNCAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNCAve.setText("33 North Carolina Ave.");
         lblNCAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -592,6 +657,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblNCAve, gridBagConstraints);
 
+        lblArcaCasilla34.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblArcaCasilla34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblArcaCasilla34.setText("34 Arca Común");
         lblArcaCasilla34.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -607,6 +673,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblArcaCasilla34, gridBagConstraints);
 
+        lblPennAve.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblPennAve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPennAve.setText("35 Pennsylvania Ave.");
         lblPennAve.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -622,6 +689,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblPennAve, gridBagConstraints);
 
+        lblFerroCasilla36.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblFerroCasilla36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblFerroCasilla36.setText("36 Ferrocarril Short Line");
         lblFerroCasilla36.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -637,6 +705,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblFerroCasilla36, gridBagConstraints);
 
+        lblCasualCasilla37.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblCasualCasilla37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCasualCasilla37.setText("37 Casualidad");
         lblCasualCasilla37.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -652,6 +721,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblCasualCasilla37, gridBagConstraints);
 
+        lblParkPlace.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblParkPlace.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblParkPlace.setText("38 Park Place");
         lblParkPlace.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -667,6 +737,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblParkPlace, gridBagConstraints);
 
+        lblTaxCasilla39.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblTaxCasilla39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTaxCasilla39.setText("39 Impuestos");
         lblTaxCasilla39.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -682,6 +753,7 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelTbalero.add(lblTaxCasilla39, gridBagConstraints);
 
+        lblBoardwalk.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
         lblBoardwalk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBoardwalk.setText("40 Boardwalk");
         lblBoardwalk.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -705,7 +777,7 @@ public class GUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Jugador", "Posicion"
+                "Jugador", "Posicion", "Dinero", "Propiedades", "Estado"
             }
         ));
         jScrollPaneTablaJugadores.setViewportView(jTableJugadores);
@@ -713,10 +785,10 @@ public class GUI extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 100;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 70;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -725,10 +797,70 @@ public class GUI extends javax.swing.JFrame {
         jButtonLanzar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/co/edu/udea/monopoly/media/img/dados.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 100;
+        gridBagConstraints.ipady = 30;
         jPanelControles.add(jButtonLanzar, gridBagConstraints);
+
+        jPanelIniciarJuego.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Juego", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Ubuntu", 1, 12))); // NOI18N
+        jPanelIniciarJuego.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 12)); // NOI18N
+        jLabel1.setText("Usuario:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 25.0;
+        gridBagConstraints.weighty = 50.0;
+        jPanelIniciarJuego.add(jLabel1, gridBagConstraints);
+
+        jTextFieldUsuario.setFont(new java.awt.Font("Ubuntu", 2, 12)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 60;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 25.0;
+        gridBagConstraints.weighty = 50.0;
+        jPanelIniciarJuego.add(jTextFieldUsuario, gridBagConstraints);
+
+        jButtonRegistrar.setFont(new java.awt.Font("Ubuntu", 1, 12)); // NOI18N
+        jButtonRegistrar.setText("Regitrar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 100.0;
+        gridBagConstraints.weighty = 50.0;
+        jPanelIniciarJuego.add(jButtonRegistrar, gridBagConstraints);
+
+        jButtonIniciar.setFont(new java.awt.Font("Ubuntu", 1, 12)); // NOI18N
+        jButtonIniciar.setText("Iniciar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 20;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 50.0;
+        gridBagConstraints.weighty = 100.0;
+        jPanelIniciarJuego.add(jButtonIniciar, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 30;
+        jPanelControles.add(jPanelIniciarJuego, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -780,12 +912,17 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAcerca;
     private javax.swing.JMenuItem itmNuevoJuego;
+    private javax.swing.JButton jButtonIniciar;
     private javax.swing.JButton jButtonLanzar;
+    private javax.swing.JButton jButtonRegistrar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanelControles;
+    private javax.swing.JPanel jPanelIniciarJuego;
     private javax.swing.JPanel jPanelTbalero;
     private javax.swing.JScrollPane jScrollPaneTablaJugadores;
     private javax.swing.JTable jTableJugadores;
+    private javax.swing.JTextField jTextFieldUsuario;
     private javax.swing.JLabel lbIlliAve;
     private javax.swing.JLabel lblArcaCasilla18;
     private javax.swing.JLabel lblArcaCasilla3;
