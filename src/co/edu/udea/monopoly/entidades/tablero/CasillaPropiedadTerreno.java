@@ -5,6 +5,7 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -25,7 +26,7 @@ public class CasillaPropiedadTerreno extends CasillaPropiedad {
     private final int costoCasa;
     private final int costoHotel;
     private final String color;
-    private Collection<Mejora> mejoras;
+    private ArrayList<Mejora> mejoras;
 
     public CasillaPropiedadTerreno(int posicion, String nombre, int rentaBase,
             String tipoCasillaPropiedad, int valor, int valorHipoteca,

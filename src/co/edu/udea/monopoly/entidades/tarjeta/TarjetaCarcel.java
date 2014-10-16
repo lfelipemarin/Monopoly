@@ -10,6 +10,6 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  *
  * @author felipe
  */
-public class TarjetaCarcel extends Tarjeta{
+public abstract class TarjetaCarcel extends Tarjeta{
     
 }
