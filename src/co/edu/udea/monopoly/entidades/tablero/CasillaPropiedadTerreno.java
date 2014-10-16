@@ -13,23 +13,24 @@ import java.util.Collection;
  */
 public class CasillaPropiedadTerreno extends CasillaPropiedad {
 
-    private final String COLOR_CAFE = "cafe";
-    private final String COLOR_AZUL_CLARO = "azul claro";
-    private final String COLOR_AZUL_MORADO = "morado";
-    private final String COLOR_NARANJA = "naranja";
-    private final String COLOR_ROJO = "rojo";
-    private final String COLOR_AMARILLO = "amarillo";
-    private final String COLOR_VERDE = "verde";
-    private final String COLOR_AZUL_OSCURO = "azul oscuro";
+    private static final String COLOR_CAFE = "cafe";
+    private static final String COLOR_AZUL_CLARO = "azul claro";
+    private static final String COLOR_AZUL_MORADO = "morado";
+    private static final String COLOR_NARANJA = "naranja";
+    private static final String COLOR_ROJO = "rojo";
+    private static final String COLOR_AMARILLO = "amarillo";
+    private static final String COLOR_VERDE = "verde";
+    private static final String COLOR_AZUL_OSCURO = "azul oscuro";
+
     private final int costoCasa;
     private final int costoHotel;
     private final String color;
     private Collection<Mejora> mejoras;
 
-    public CasillaPropiedadTerreno(int posicion, String tipoCasilla,
-            String nombre, int rentaBase, String tipoCasillaPropiedad, int valor,
-            int valorHipoteca, int costoCasa, int costoHotel, String color) {
-        super(posicion, tipoCasilla, nombre, rentaBase, tipoCasillaPropiedad, valor, valorHipoteca);
+    public CasillaPropiedadTerreno(int posicion, String nombre, int rentaBase,
+            String tipoCasillaPropiedad, int valor, int valorHipoteca,
+            int costoCasa, int costoHotel, String color) {
+        super(posicion, nombre, rentaBase, valor, valorHipoteca);
         this.color = color;
         this.costoCasa = costoCasa;
         this.costoHotel = costoHotel;

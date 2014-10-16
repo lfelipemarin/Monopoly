@@ -11,13 +11,15 @@ package co.edu.udea.monopoly.entidades.tablero;
  */
 public abstract class CasillaPropiedadServicio extends CasillaPropiedad {
 
-    private final String tipoCasillaPropiedadServicio;
+    public static final String TIPO_CASILLA_PROPIEDAD_SERVICIO_PUBLICO = "publico";
+    public static final String TIPO_CASILLA_PROPIEDAD_SERVICIO_FERROCARRIL = "ferrocarril";
 
-    public CasillaPropiedadServicio(int posicion, String tipoCasilla,
-            String nombre, int rentaBase, String tipoCasillaPropiedad, int valor,
-            int valorHipoteca, String tipoCasillaPropiedadServicio) {
-        super(posicion, tipoCasilla, nombre, rentaBase, tipoCasillaPropiedad, valor, valorHipoteca);
-        this.tipoCasillaPropiedadServicio = tipoCasillaPropiedadServicio;
+    private String tipoCasillaPropiedadServicio;
+
+    public CasillaPropiedadServicio(int posicion, String nombre, int rentaBase,
+            int valor, int valorHipoteca) {
+        super(posicion, nombre, rentaBase, valor, valorHipoteca);
+        this.setTipoCasillaPropiedad(CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_SERVICIO);
     }
 
     /**
@@ -25,6 +27,14 @@ public abstract class CasillaPropiedadServicio extends CasillaPropiedad {
      */
     public String getTipoCasillaPropiedadServicio() {
         return tipoCasillaPropiedadServicio;
+    }
+
+    /**
+     * @param tipoCasillaPropiedadServicio the tipoCasillaPropiedadServicio to
+     * set
+     */
+    public void setTipoCasillaPropiedadServicio(String tipoCasillaPropiedadServicio) {
+        this.tipoCasillaPropiedadServicio = tipoCasillaPropiedadServicio;
     }
 
 }

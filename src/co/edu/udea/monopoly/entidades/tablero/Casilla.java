@@ -11,12 +11,14 @@ package co.edu.udea.monopoly.entidades.tablero;
  */
 public abstract class Casilla {
 
-    private final int posicion;
-    private final String tipoCasilla;
+    public static final String TIPO_CASILLA_PROPIEDAD = "propiedad";
+    public static final String TIPO_CASILLA_ESPECIAL = "especial";
 
-    public Casilla(int posicion, String tipoCasilla) {
+    private final int posicion;
+    private String tipoCasilla;
+
+    public Casilla(int posicion) {
         this.posicion = posicion;
-        this.tipoCasilla = tipoCasilla;
     }
 
     /**
@@ -31,5 +33,12 @@ public abstract class Casilla {
      */
     public String getTipoCasilla() {
         return tipoCasilla;
+    }
+
+    /**
+     * @param tipoCasilla the tipoCasilla to set
+     */
+    public void setTipoCasilla(String tipoCasilla) {
+        this.tipoCasilla = tipoCasilla;
     }
 }

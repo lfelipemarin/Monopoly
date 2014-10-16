@@ -5,7 +5,6 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -15,8 +14,9 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialDelito extends CasillaEspecial {
 
-    public CasillaEspecialDelito(int posicion, String tipoCasilla) {
-        super(posicion, tipoCasilla);
+    public CasillaEspecialDelito(int posicion) {
+        super(posicion);
+        this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_DELITO);
     }
 
     @Override

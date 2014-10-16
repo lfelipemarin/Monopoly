@@ -13,11 +13,10 @@ public class CasillaPropiedadServicioFerrocarril extends CasillaPropiedadServici
 
     private final String nombreFerrocarril;
 
-    public CasillaPropiedadServicioFerrocarril(int posicion, String tipoCasilla,
-            String nombre, int rentaBase, String tipoCasillaPropiedad, int valor,
-            int valorHipoteca, String tipoCasillaPropiedadServicio, String nombreFerrocarril) {
-        super(posicion, tipoCasilla, nombre, rentaBase, tipoCasillaPropiedad,
-                valor, valorHipoteca, tipoCasillaPropiedadServicio);
+    public CasillaPropiedadServicioFerrocarril(int posicion, String nombre,
+            int rentaBase, int valor, int valorHipoteca, String nombreFerrocarril) {
+        super(posicion, nombre, rentaBase, valor, valorHipoteca);
+        this.setTipoCasillaPropiedadServicio(CasillaPropiedadServicio.TIPO_CASILLA_PROPIEDAD_SERVICIO_FERROCARRIL);
         this.nombreFerrocarril = nombreFerrocarril;
     }
 
