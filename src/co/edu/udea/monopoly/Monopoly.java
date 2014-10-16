@@ -5,8 +5,6 @@
  */
 package co.edu.udea.monopoly;
 
-import co.edu.udea.monopoly.entidades.juego.Juego;
-
 /**
  *
  * @author felipe
@@ -17,8 +15,8 @@ public class Monopoly {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Juego juego = new Juego();
-        juego.juegoNuevo();
+//        Juego juego = new Juego();
+//        juego.juegoNuevo();
     }
 
 }

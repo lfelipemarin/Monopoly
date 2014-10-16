@@ -6,13 +6,10 @@
 package co.edu.udea.monopoly.entidades.juego;
 
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
-import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcel;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrar;
-import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaCobrar;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaCobrarInicio;
 import co.edu.udea.monopoly.gui.Tablero;
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  *
@@ -92,7 +89,6 @@ public class Juego {
 
     public void crearTarjetas() {
         TarjetaIrCasillaCobrarInicio tarjetaIrCasillaCobrar = new TarjetaIrCasillaCobrarInicio();
-        TarjetaCobrar tarjeta
     }
 
 }
