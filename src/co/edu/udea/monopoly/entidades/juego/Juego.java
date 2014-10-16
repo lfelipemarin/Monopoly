@@ -5,6 +5,8 @@
  */
 package co.edu.udea.monopoly.entidades.juego;
 
+import co.edu.udea.monopoly.entidades.tablero.Casilla;
+import co.edu.udea.monopoly.entidades.tablero.Tablero;
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelIrCarcel;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelSalirCarcel;
@@ -32,7 +34,6 @@ import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarEscuela;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarHospital;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarJugadores;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarPobres;
-import co.edu.udea.monopoly.gui.Tablero;
 import java.util.ArrayList;
 
 /**
@@ -179,6 +180,18 @@ public class Juego {
         tarjetasCasualidad.add(tarjetaPagarJugadores);
         tarjetasCasualidad.add(tarjetaCobrarImpuestosPrestamos);
         tarjetasCasualidad.add(tarjetaCobrarCrucigrama);
+    }
+
+    public void jugar() {
+        turnero.proximoJugador();
+        Jugador jugador = turnero.getJugadorEnTurno();
+        int valorDados;
+        valorDados = turnero.tirarDados();
+        jugador.getFicha().aumentarPosicion(valorDados);
+        int pos = jugador.getFicha().getPosicion();
+        if (tablero.getCasillaByPos(pos).getTipoCasilla().equals(Casilla.TIPO_CASILLA_PROPIEDAD)) {
+
+        }
     }
 
 }

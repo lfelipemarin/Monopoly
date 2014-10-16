@@ -6,6 +6,7 @@
 package co.edu.udea.monopoly.entidades.juego;
 
 import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
+import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadTerreno;
 
 /**
  *
@@ -154,5 +155,19 @@ public class Jugador {
             }
         }
         return false;
+    }
+
+    public void cobrarRenta(CasillaPropiedad propiedad) {
+        int renta;
+        propiedad.calculaRenta();
+        renta = propiedad.getRenta();
+        getCuenta().agregarDinero(renta);
+    }
+
+    public void pagarRenta(CasillaPropiedadTerreno propiedad) {
+        int renta;
+        propiedad.calculaRenta();
+        renta = propiedad.getRenta();
+        getCuenta().restarDinero(renta);
     }
 }
