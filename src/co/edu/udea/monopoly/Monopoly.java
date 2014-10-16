@@ -5,6 +5,8 @@
  */
 package co.edu.udea.monopoly;
 
+import co.edu.udea.monopoly.entidades.tablero.Tablero;
+
 /**
  *
  * @author felipe
@@ -17,6 +19,7 @@ public class Monopoly {
     public static void main(String[] args) {
 //        Juego juego = new Juego();
 //        juego.juegoNuevo();
+        Tablero t = new Tablero();
     }
 
 }

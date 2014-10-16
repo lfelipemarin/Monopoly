@@ -11,25 +11,14 @@ package co.edu.udea.monopoly.entidades.tablero;
  */
 public class CasillaPropiedadServicioFerrocarril extends CasillaPropiedadServicio {
 
-    private final String nombreFerrocarril;
-
-    public CasillaPropiedadServicioFerrocarril(int posicion, String nombre,
-            int rentaBase, int valor, int valorHipoteca, String nombreFerrocarril) {
+    public CasillaPropiedadServicioFerrocarril(String nombre, int posicion,
+            int valor, int rentaBase, int valorHipoteca) {
         super(posicion, nombre, rentaBase, valor, valorHipoteca);
         this.setTipoCasillaPropiedadServicio(CasillaPropiedadServicio.TIPO_CASILLA_PROPIEDAD_SERVICIO_FERROCARRIL);
-        this.nombreFerrocarril = nombreFerrocarril;
     }
 
     @Override
     public void calculaRenta() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     * @return the nombreFerrocarril
-     */
-    public String getNombreFerrocarril() {
-        return nombreFerrocarril;
-    }
-
 }

@@ -14,27 +14,29 @@ import java.util.Collection;
  */
 public class CasillaPropiedadTerreno extends CasillaPropiedad {
 
-    private static final String COLOR_CAFE = "cafe";
-    private static final String COLOR_AZUL_CLARO = "azul claro";
-    private static final String COLOR_AZUL_MORADO = "morado";
-    private static final String COLOR_NARANJA = "naranja";
-    private static final String COLOR_ROJO = "rojo";
-    private static final String COLOR_AMARILLO = "amarillo";
-    private static final String COLOR_VERDE = "verde";
-    private static final String COLOR_AZUL_OSCURO = "azul oscuro";
+    public static final String COLOR_LIGHT_GREEN = "Light Green";
+    public static final String COLOR_VIOLET = "Violet";
+    public static final String COLOR_ORANGE = "Orange";
+    public static final String COLOR_RED = "Red";
+    public static final String COLOR_YELLOW = "Yellow";
+    public static final String COLOR_DARK_GREEN = "Dark Green";
+    public static final String COLOR_DARK_BLUE = "Dark Blue";
+    public static final String COLOR_PURPLE = "Purple";
 
     private final int costoCasa;
     private final int costoHotel;
     private final String color;
-    private ArrayList<Mejora> mejoras;
+    private final ArrayList<Mejora> mejoras;
 
-    public CasillaPropiedadTerreno(int posicion, String nombre, int rentaBase,
-            String tipoCasillaPropiedad, int valor, int valorHipoteca,
+    public CasillaPropiedadTerreno(String nombre, int posicion,
+            int valor, int rentaBase, int valorHipoteca,
             int costoCasa, int costoHotel, String color) {
         super(posicion, nombre, rentaBase, valor, valorHipoteca);
+        this.setTipoCasillaPropiedad(CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_TERRENO);
         this.color = color;
         this.costoCasa = costoCasa;
         this.costoHotel = costoHotel;
+        this.mejoras = new ArrayList<>();
     }
 
     /**
