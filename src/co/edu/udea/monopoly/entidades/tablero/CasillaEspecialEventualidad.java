@@ -14,11 +14,14 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialEventualidad extends CasillaEspecial {
 
+    public static final String TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN = "arca comun";
+    public static final String TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD = "casualidad";
+
     private final String tipoCasillaEspecialEventualidad;
 
-    public CasillaEspecialEventualidad(int posicion, String tipoCasilla,
-            String tipoCasillaEspecialEventualidad) {
-        super(posicion, tipoCasilla);
+    public CasillaEspecialEventualidad(int posicion, String tipoCasillaEspecialEventualidad) {
+        super(posicion);
+        this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD);
         this.tipoCasillaEspecialEventualidad = tipoCasillaEspecialEventualidad;
     }
 

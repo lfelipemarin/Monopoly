@@ -11,23 +11,27 @@ package co.edu.udea.monopoly.entidades.tablero;
  */
 public abstract class CasillaPropiedad extends Casilla {
 
-    public final String HIPOTECADA = "hipotecada";
-    public final String DISPONIBLE = "disponible";
-    public final String ADQUIRIDA = "adquirida";
+    public static final String TIPO_CASILLA_PROPIEDAD_TERRENO = "terreno";
+    public static final String TIPO_CASILLA_PROPIEDAD_SERVICIO = "servicio";
+
+    public static final String HIPOTECADA = "hipotecada";
+    public static final String DISPONIBLE = "disponible";
+    public static final String ADQUIRIDA = "adquirida";
+
     private String estado;
     private final String nombre;
     private int renta;
     private final int rentaBase;
-    private final String tipoCasillaPropiedad;
+    private String tipoCasillaPropiedad;
     private final int valor;
     private final int valorHipoteca;
 
-    public CasillaPropiedad(int posicion, String tipoCasilla, String nombre, int rentaBase, String tipoCasillaPropiedad,
+    public CasillaPropiedad(int posicion, String nombre, int rentaBase,
             int valor, int valorHipoteca) {
-        super(posicion, tipoCasilla);
+        super(posicion);
+        this.setTipoCasilla(Casilla.TIPO_CASILLA_PROPIEDAD);
         this.nombre = nombre;
         this.rentaBase = rentaBase;
-        this.tipoCasillaPropiedad = tipoCasillaPropiedad;
         this.valor = valor;
         this.valorHipoteca = valorHipoteca;
     }
@@ -94,7 +98,14 @@ public abstract class CasillaPropiedad extends Casilla {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
+
     public abstract void calculaRenta();
+
+    /**
+     * @param tipoCasillaPropiedad the tipoCasillaPropiedad to set
+     */
+    public void setTipoCasillaPropiedad(String tipoCasillaPropiedad) {
+        this.tipoCasillaPropiedad = tipoCasillaPropiedad;
+    }
 
 }

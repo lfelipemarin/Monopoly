@@ -6,10 +6,8 @@
 package co.edu.udea.monopoly.entidades.juego;
 
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
-import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcel;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelIrCarcel;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelSalirCarcel;
-import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrar;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrarAcciones;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrarBanco;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrarConcursoBelleza;
@@ -24,7 +22,6 @@ import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrarOpera;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrarReembolsoImpuesto;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCobrarSeguroVida;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaCasillaPropiedad;
-import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaCobrar;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaCobrarInicio;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaProximaUtilidad;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaIrCasillaTresCasillasAtras;
@@ -37,7 +34,6 @@ import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarJugadores;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarPobres;
 import co.edu.udea.monopoly.gui.Tablero;
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  *
@@ -116,6 +112,7 @@ public class Juego {
     }
 
     public void crearTarjetas() {
+
         //tarjetas para el arreglo de tarjetasArcaComun
         TarjetaIrCasillaCobrarInicio tarjetaIrCasillaCobrarInicio = new TarjetaIrCasillaCobrarInicio();
         TarjetaCobrarErrorBanco tarjetaCobrarErrorBanco = new TarjetaCobrarErrorBanco();

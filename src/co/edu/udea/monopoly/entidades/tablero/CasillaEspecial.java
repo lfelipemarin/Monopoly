@@ -14,10 +14,19 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public abstract class CasillaEspecial extends Casilla {
 
+    public static final String TIPO_CASILLA_ESPECIAL_INICIO = "inicio";
+    public static final String TIPO_CASILLA_ESPECIAL_CARCEL = "carcel";
+    public static final String TIPO_CASILLA_ESPECIAL_DELITO = "delito";
+    public static final String TIPO_CASILLA_ESPECIAL_EVENTUALIDAD = "eventualidad";
+    public static final String TIPO_CASILLA_ESPECIAL_IMPUESTO = "impuesto";
+    public static final String TIPO_CASILLA_ESPECIAL_PARADA_LIBRE = "libre";
+    public static final String TIPO_CASILLA_ESPECIAL_SUELDO = "sueldo";
+
     private String tipoCasillaEspecial;
 
-    public CasillaEspecial(int posicion, String tipoCasilla) {
-        super(posicion, tipoCasilla);
+    public CasillaEspecial(int posicion) {
+        super(posicion);
+        this.setTipoCasilla(Casilla.TIPO_CASILLA_ESPECIAL);
     }
 
     /**

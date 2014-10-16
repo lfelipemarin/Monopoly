@@ -14,11 +14,12 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialImpuesto extends CasillaEspecial {
 
-    public final int IMPUESTO_DECLARACION = 200;
-    public final int IMPUESTO_LUJOS = 75;
+    public static final int IMPUESTO_DECLARACION = 200;
+    public static final int IMPUESTO_LUJOS = 75;
 
-    public CasillaEspecialImpuesto(int posicion, String tipoCasilla) {
-        super(posicion, tipoCasilla);
+    public CasillaEspecialImpuesto(int posicion) {
+        super(posicion);
+        this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_IMPUESTO);
     }
 
     @Override

@@ -10,18 +10,17 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
  *
- * @author felipe
+ * @author eux
  */
-public class CasillaEspecialParadaLibre extends CasillaEspecial {
+public class CasillaEspecialInicio extends CasillaEspecial {
     
-    public CasillaEspecialParadaLibre(int posicion) {
+    public CasillaEspecialInicio(int posicion) {
         super(posicion);
-        this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_PARADA_LIBRE);
+        this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_INICIO);
     }
     
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        //se queda en la misma casilla y no se hace nada.
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

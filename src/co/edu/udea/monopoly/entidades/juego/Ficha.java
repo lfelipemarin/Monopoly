@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.udea.monopoly.entidades.juego;
 
 /**
@@ -11,9 +10,10 @@ package co.edu.udea.monopoly.entidades.juego;
  * @author felipe
  */
 public class Ficha {
+    
     private final String id;
     private int posicion;
-
+    
     public Ficha(String id) {
         this.id = id;
     }
@@ -37,6 +37,17 @@ public class Ficha {
      */
     public void setPosicion(int posicion) {
         this.posicion = posicion;
+    }
+    
+    public void aumentarPosicion(int p) {
+        setPosicion(posicion + p);
+    }
+    
+    public void restarPosicion(int p) {
+        setPosicion(posicion - p);
+        if (getPosicion() < 1) {
+            setPosicion(1);
+        }
     }
     
 }

@@ -11,14 +11,13 @@ package co.edu.udea.monopoly.entidades.tablero;
  */
 public class CasillaPropiedadServicioPublico extends CasillaPropiedadServicio {
 
-    private final String nombreServicio;
+    private final String nombreServicioPublico;
 
-    public CasillaPropiedadServicioPublico(int posicion, String tipoCasilla,
-            String nombre, int rentaBase, String tipoCasillaPropiedad, int valor,
-            int valorHipoteca, String tipoCasillaPropiedadServicio, String nombreServicio) {
-        super(posicion, tipoCasilla, nombre, rentaBase, tipoCasillaPropiedad,
-                valor, valorHipoteca, tipoCasillaPropiedadServicio);
-        this.nombreServicio = nombreServicio;
+    public CasillaPropiedadServicioPublico(int posicion, String nombre,
+            int rentaBase, int valor, int valorHipoteca, String nombreServicio) {
+        super(posicion, nombre, rentaBase, valor, valorHipoteca);
+        this.setTipoCasillaPropiedadServicio(CasillaPropiedadServicio.TIPO_CASILLA_PROPIEDAD_SERVICIO_PUBLICO);
+        this.nombreServicioPublico = nombreServicio;
     }
 
     @Override
@@ -29,8 +28,8 @@ public class CasillaPropiedadServicioPublico extends CasillaPropiedadServicio {
     /**
      * @return the nombreServicio
      */
-    public String getNombreServicio() {
-        return nombreServicio;
+    public String getNombreServicioPublico() {
+        return nombreServicioPublico;
     }
 
 }

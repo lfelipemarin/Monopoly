@@ -5,7 +5,6 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -15,25 +14,19 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialSueldo extends CasillaEspecial {
 
-    private static final int sueldo = 200;
+    private static final int SUELDO = 200;
 
-    public CasillaEspecialSueldo(int posicion, String tipoCasilla) {
-        super(posicion, tipoCasilla);
-    }
-
-    /**
-     * @return the sueldo
-     */
-    public int getSueldo() {
-        return sueldo;
+    public CasillaEspecialSueldo(int posicion) {
+        super(posicion);
+        this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_SUELDO);
     }
 
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         //se cobra un sueldo de 200 al pasar por la casilla 1
         int dineroJugador = jugador.getCuenta().getDinero();
-        jugador.getCuenta().setDinero(dineroJugador + sueldo);
-        juego.getBanco().restarDinero(sueldo);
+        jugador.getCuenta().setDinero(dineroJugador + SUELDO);
+        juego.getBanco().restarDinero(SUELDO);
     }
 
 }
