@@ -10,8 +10,7 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  *
  * @author felipe
  */
-public class TarjetaIrCasillaProximaUtilidad extends TarjetaIrCasilla{
-
+public class TarjetaCobrarConcursoBelleza extends TarjetaCobrar{
     @Override
     public void ejecutarAccion() {
         super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
@@ -21,5 +20,4 @@ public class TarjetaIrCasillaProximaUtilidad extends TarjetaIrCasilla{
     public String getMensaje() {
         return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
     }
-    
 }

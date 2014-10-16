@@ -11,5 +11,13 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  * @author felipe
  */
 public class TarjetaIrCasillaCobrarInicio extends TarjetaIrCasillaCobrar{
-    
+    @Override
+    public void ejecutarAccion() {
+        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String getMensaje() {
+        return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
+    }
 }

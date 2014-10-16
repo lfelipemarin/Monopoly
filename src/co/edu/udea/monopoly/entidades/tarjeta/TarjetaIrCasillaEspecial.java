@@ -10,7 +10,7 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  *
  * @author felipe
  */
-public class TarjetaIrCasillaProximaUtilidad extends TarjetaIrCasilla{
+public class TarjetaIrCasillaEspecial extends TarjetaIrCasilla{
 
     @Override
     public void ejecutarAccion() {
