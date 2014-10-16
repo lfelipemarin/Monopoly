@@ -71,6 +71,7 @@ public class Jugador {
         if (banco.borrarPorpiedad(propiedad)) {
             if (getCuenta().agregarPropiedad(propiedad)) {
                 propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
+                propiedad.setPropietario(this);
                 return true;
             }
         }
@@ -85,6 +86,7 @@ public class Jugador {
         if (jugador.getCuenta().borraPropiedad(propiedad)) {
             if (getCuenta().agregarPropiedad(propiedad)) {
                 propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
+                propiedad.setPropietario(this);
                 return true;
             }
         }
@@ -99,6 +101,7 @@ public class Jugador {
         if (getCuenta().borraPropiedad(propiedad)) {
             if (banco.agregarPropiedad(propiedad)) {
                 propiedad.setEstado(CasillaPropiedad.DISPONIBLE);
+                propiedad.setPropietario(null);
                 return true;
             }
         }
@@ -113,6 +116,7 @@ public class Jugador {
         if (getCuenta().borraPropiedad(propiedad)) {
             if (jugador.getCuenta().agregarPropiedad(propiedad)) {
                 propiedad.setEstado(CasillaPropiedad.ADQUIRIDA);
+                propiedad.setPropietario(jugador);
                 return true;
             }
         }
@@ -157,17 +161,15 @@ public class Jugador {
         return false;
     }
 
-    public void cobrarRenta(CasillaPropiedad propiedad) {
-        int renta;
-        propiedad.calculaRenta();
-        renta = propiedad.getRenta();
-        getCuenta().agregarDinero(renta);
+    public Boolean cobrarRenta(CasillaPropiedad propiedad, Jugador jugador) {
+        int renta = propiedad.getRenta();
+        if (jugador.getCuenta().restarDinero(renta)) {
+            getCuenta().agregarDinero(renta);
+            return true;
+        }
+        return false;
     }
 
     public void pagarRenta(CasillaPropiedadTerreno propiedad) {
-        int renta;
-        propiedad.calculaRenta();
-        renta = propiedad.getRenta();
-        getCuenta().restarDinero(renta);
     }
 }

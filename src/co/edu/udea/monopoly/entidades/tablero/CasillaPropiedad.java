@@ -5,6 +5,8 @@
  */
 package co.edu.udea.monopoly.entidades.tablero;
 
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
@@ -25,6 +27,7 @@ public abstract class CasillaPropiedad extends Casilla {
     private String tipoCasillaPropiedad;
     private final int valor;
     private final int valorHipoteca;
+    private Jugador propietario;
 
     public CasillaPropiedad(int posicion, String nombre, int rentaBase,
             int valor, int valorHipoteca) {
@@ -106,6 +109,20 @@ public abstract class CasillaPropiedad extends Casilla {
      */
     public void setTipoCasillaPropiedad(String tipoCasillaPropiedad) {
         this.tipoCasillaPropiedad = tipoCasillaPropiedad;
+    }
+
+    /**
+     * @return the propietario
+     */
+    public Jugador getPropietario() {
+        return propietario;
+    }
+
+    /**
+     * @param propietario the propietario to set
+     */
+    public void setPropietario(Jugador propietario) {
+        this.propietario = propietario;
     }
 
 }

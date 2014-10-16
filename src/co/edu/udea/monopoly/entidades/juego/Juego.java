@@ -6,6 +6,9 @@
 package co.edu.udea.monopoly.entidades.juego;
 
 import co.edu.udea.monopoly.entidades.tablero.Casilla;
+import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
+import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadServicio;
+import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadTerreno;
 import co.edu.udea.monopoly.entidades.tablero.Tablero;
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelIrCarcel;
@@ -34,7 +37,10 @@ import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarEscuela;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarHospital;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarJugadores;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaPagarPobres;
+import co.edu.udea.monopoly.gui.GUI;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,6 +51,7 @@ public class Juego {
     private final Banco banco;
     private final Turnero turnero;
     private final Tablero tablero;
+    private final GUI gui;
     private final ArrayList<Ficha> fichas;
     private final ArrayList<Tarjeta> tarjetasArcaComun;
     private final ArrayList<Tarjeta> tarjetasCasualidad;
@@ -53,9 +60,14 @@ public class Juego {
         this.banco = new Banco();
         this.turnero = new Turnero();
         this.tablero = new Tablero();
+        this.gui = new GUI();
         this.fichas = new ArrayList<>();
         this.tarjetasArcaComun = new ArrayList<>();
         this.tarjetasCasualidad = new ArrayList<>();
+    }
+
+    public void ActionListener(ActionEvent e) {
+
     }
 
     public void crearJugador(String nombreJugador, String nombreFicha) {
@@ -189,8 +201,37 @@ public class Juego {
         valorDados = turnero.tirarDados();
         jugador.getFicha().aumentarPosicion(valorDados);
         int pos = jugador.getFicha().getPosicion();
-        if (tablero.getCasillaByPos(pos).getTipoCasilla().equals(Casilla.TIPO_CASILLA_PROPIEDAD)) {
-
+        Casilla casilla = tablero.getCasillaByPos(pos);
+        switch (casilla.getTipoCasilla()) {
+            case Casilla.TIPO_CASILLA_PROPIEDAD:
+                CasillaPropiedad propiedad = (CasillaPropiedad) casilla;
+                switch (propiedad.getTipoCasillaPropiedad()) {
+                    case CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_TERRENO:
+                        CasillaPropiedadTerreno terreno = (CasillaPropiedadTerreno) propiedad;
+                        switch (terreno.getEstado()) {
+                            case CasillaPropiedad.ADQUIRIDA:
+                                if (!jugador.getCuenta().getPropiedades().contains(terreno)) {
+                                    terreno.getPropietario().cobrarRenta(terreno, jugador);
+                                }
+                                break;
+                            case CasillaPropiedad.DISPONIBLE:
+                                if (JOptionPane.showConfirmDialog(gui, "Desea comprar estao propiedad?") == 1) {
+                                    jugador.comprarPropiedad(banco, terreno);
+                                }
+                                break;
+                                
+                            case CasillaPropiedad.HIPOTECADA:
+                                JOptionPane.showMessageDialog(gui, "Propiedad hipotecada.\n"
+                                        + "no se paga renta.");
+                                break;
+                        }
+                        break;
+                    case CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_SERVICIO:
+                        CasillaPropiedadServicio servicio = (CasillaPropiedadServicio) propiedad;
+                        break;
+                }   break;
+            case Casilla.TIPO_CASILLA_ESPECIAL:
+                break;
         }
     }
 
