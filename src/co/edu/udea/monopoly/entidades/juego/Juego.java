@@ -6,8 +6,8 @@
 package co.edu.udea.monopoly.entidades.juego;
 
 import co.edu.udea.monopoly.entidades.tablero.Casilla;
+import co.edu.udea.monopoly.entidades.tablero.CasillaEspecial;
 import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedad;
-import co.edu.udea.monopoly.entidades.tablero.CasillaPropiedadTerreno;
 import co.edu.udea.monopoly.entidades.tablero.Tablero;
 import co.edu.udea.monopoly.entidades.tarjeta.Tarjeta;
 import co.edu.udea.monopoly.entidades.tarjeta.TarjetaCarcelIrCarcel;
@@ -70,7 +70,9 @@ public class Juego {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                getGui().getJButtonLanzar().setEnabled(false);
                 jugar();
+                getGui().getJButtonLanzar().setEnabled(true);
             }
         });
         this.gui.getJButtonRegistrar().addActionListener(new ActionListener() {
@@ -78,18 +80,18 @@ public class Juego {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    String nombre = gui.getJTextFieldUsuario().getText();
+                    String nombre = getGui().getJTextFieldUsuario().getText();
                     if (nombre.length() > 1) {
                         registrarJugador(nombre);
-                        gui.mostrarJugadoresEnTabla(jugadores);
+                        getGui().mostrarJugadoresEnTabla(jugadores);
                         habilitarJuego();
                     } else {
-                        JOptionPane.showMessageDialog(gui, ":(");
+                        JOptionPane.showMessageDialog(getGui(), ":(");
                     }
-                    gui.getJTextFieldUsuario().setText("");
-                    gui.getJTextFieldUsuario().requestFocus();
+                    getGui().getJTextFieldUsuario().setText("");
+                    getGui().getJTextFieldUsuario().requestFocus();
                 } catch (Exception ee) {
-                    JOptionPane.showMessageDialog(gui, "Ingrese un nombre válido.");
+                    JOptionPane.showMessageDialog(getGui(), "Ingrese un nombre válido.");
                 }
             }
         });
@@ -97,10 +99,10 @@ public class Juego {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                gui.getJButtonIniciar().setEnabled(false);
-                gui.getJButtonRegistrar().setEnabled(false);
-                gui.getJTextFieldUsuario().setEnabled(false);
-                gui.getJButtonLanzar().setEnabled(true);
+                getGui().getJButtonIniciar().setEnabled(false);
+                getGui().getJButtonRegistrar().setEnabled(false);
+                getGui().getJTextFieldUsuario().setEnabled(false);
+                getGui().getJButtonLanzar().setEnabled(true);
             }
         });
     }
@@ -122,10 +124,10 @@ public class Juego {
 
     public void habilitarJuego() {
         if (jugadores.size() > 1) {
-            gui.getJButtonIniciar().setEnabled(true);
+            getGui().getJButtonIniciar().setEnabled(true);
         }
         if (jugadores.size() > 7) {
-            gui.getJButtonRegistrar().setEnabled(false);
+            getGui().getJButtonRegistrar().setEnabled(false);
         }
     }
 
@@ -239,50 +241,56 @@ public class Juego {
         jugador.getFicha().aumentarPosicion(valorDados);
         int pos = jugador.getFicha().getPosicion();
         Casilla casilla = tablero.getCasillaByPos(pos);
-        JOptionPane.showMessageDialog(gui, "El jugador " + jugador.getNombre() + " sacó " + valorDados + ".\nCalló en la posicion " + pos + ".");
+        JOptionPane.showMessageDialog(getGui(), "El jugador " + jugador.getNombre() + " sacó " + valorDados + ".\nCalló en la posicion " + pos);
         switch (casilla.getTipoCasilla()) {
             case Casilla.TIPO_CASILLA_PROPIEDAD:
-                JOptionPane.showMessageDialog(gui, "Propiedad");
                 CasillaPropiedad propiedad = (CasillaPropiedad) casilla;
-                switch (propiedad.getTipoCasillaPropiedad()) {
-                    case CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_TERRENO:
-                        JOptionPane.showMessageDialog(gui, "Terreno");
-                        CasillaPropiedadTerreno terreno = (CasillaPropiedadTerreno) propiedad;
-                        switch (terreno.getEstado()) {
-                            case CasillaPropiedad.ADQUIRIDA:
-                                JOptionPane.showMessageDialog(gui, "Adquirida");
-                                if (!jugador.getCuenta().getPropiedades().contains(terreno)) {
-                                    JOptionPane.showMessageDialog(gui, "Paga renta.");
-                                    terreno.getPropietario().cobrarRenta(terreno, jugador);
-                                    return;
-                                }
-                                JOptionPane.showMessageDialog(gui, "Propia, no paga renta.");
-                                break;
-                            case CasillaPropiedad.DISPONIBLE:
-                                JOptionPane.showMessageDialog(gui, "Disponible");
-                                int opcion = JOptionPane.showConfirmDialog(gui, "Desea comprar esta propiedad?");
-                                if (opcion == 0) {
-                                    jugador.comprarPropiedad(banco, terreno);
-                                }
-                                break;
-
-                            case CasillaPropiedad.HIPOTECADA:
-                                JOptionPane.showMessageDialog(gui, "Hhipotecada.\n"
-                                        + "no se paga renta.");
-                                break;
+                JOptionPane.showMessageDialog(getGui(), "Propiedad " + propiedad.getNombre());
+                switch (propiedad.getEstado()) {
+                    case CasillaPropiedad.ADQUIRIDA:
+                        JOptionPane.showMessageDialog(getGui(), "Adquirida");
+                        if (!jugador.getCuenta().getPropiedades().contains(propiedad)) {
+                            JOptionPane.showMessageDialog(getGui(), "Paga renta.");
+                            propiedad.getPropietario().cobrarRenta(propiedad, jugador);
+                            return;
+                        }
+                        JOptionPane.showMessageDialog(getGui(), "Propia, no paga renta.");
+                        break;
+                    case CasillaPropiedad.DISPONIBLE:
+                        JOptionPane.showMessageDialog(getGui(), "Disponible");
+                        int opcion = JOptionPane.showConfirmDialog(getGui(), "Desea comprar esta propiedad?");
+                        if (opcion == 0) {
+                            jugador.comprarPropiedad(banco, propiedad);
                         }
                         break;
-                    case CasillaPropiedad.TIPO_CASILLA_PROPIEDAD_SERVICIO:
-                        JOptionPane.showMessageDialog(gui, "Servicio");
-//                        CasillaPropiedadServicio servicio = (CasillaPropiedadServicio) propiedad;
+
+                    case CasillaPropiedad.HIPOTECADA:
+                        JOptionPane.showMessageDialog(getGui(), "Hhipotecada.\n"
+                                + "no se paga renta.");
                         break;
                 }
                 break;
             case Casilla.TIPO_CASILLA_ESPECIAL:
-                JOptionPane.showMessageDialog(gui, "Especial");
+                JOptionPane.showMessageDialog(getGui(), "Especial");
+                CasillaEspecial especial = (CasillaEspecial) casilla;
+                switch (especial.getTipoCasillaEspecial()) {
+                    case (CasillaEspecial.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD):
+                        JOptionPane.showMessageDialog(getGui(), "Coge tarjeta");
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(getGui(), "Ejecuta accion");
+                        especial.ejecutarAccion(jugador, this);
+                }
                 break;
         }
         siguienteJugador();
-        gui.mostrarJugadoresEnTabla(jugadores);
+        getGui().mostrarJugadoresEnTabla(jugadores);
+    }
+
+    /**
+     * @return the gui
+     */
+    public GUI getGui() {
+        return gui;
     }
 }

@@ -75,7 +75,7 @@ public class GUI extends javax.swing.JFrame {
                     rowHeight = Math.max(rowHeight, comp.getPreferredSize().height);
                 }
 
-                j.setRowHeight(row, (rowHeight + 10));
+                j.setRowHeight(row, (rowHeight + 5));
             }
         } catch (ClassCastException e) {
         }
