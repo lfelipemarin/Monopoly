@@ -26,46 +26,46 @@ public class Tablero {
     }
 
     public final void crearCasillasEspeciales() {
-        Casilla casillaEspecialInicio = new CasillaEspecialParadaLibre(1);
+        Casilla casillaEspecialInicio = new CasillaEspecialParadaLibre(1, "GO");
         this.getCasillas().add(casillaEspecialInicio);
 
         Casilla casillaEspecialEventualidadArcaComunal3 = new CasillaEspecialEventualidad(3,
-                CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
+                "Eventualidad Arca Comun",CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
         this.getCasillas().add(casillaEspecialEventualidadArcaComunal3);
 
-        Casilla casillaEspecialImpuesto5 = new CasillaEspecialImpuesto(5);
+        Casilla casillaEspecialImpuesto5 = new CasillaEspecialImpuesto(5, "Impuesto");
         this.getCasillas().add(casillaEspecialImpuesto5);
 
         Casilla casillaEspecialEventualidadCasualidad8 = new CasillaEspecialEventualidad(8,
-                CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
+                "Eventualidad Casualidad",CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
         this.getCasillas().add(casillaEspecialEventualidadCasualidad8);
 
-        Casilla casillaEspecialCarcel = new CasillaEspecialCarcel(11);
+        Casilla casillaEspecialCarcel = new CasillaEspecialCarcel(11, "Carcel");
         this.getCasillas().add(casillaEspecialCarcel);
 
         Casilla casillaEspecialEventualidadArcaComun18 = new CasillaEspecialEventualidad(18,
-                CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
+                "Eventualidad Arca Comun", CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
         this.getCasillas().add(casillaEspecialEventualidadArcaComun18);
 
-        Casilla casillaespecialParadaLibre = new CasillaEspecialParadaLibre(21);
+        Casilla casillaespecialParadaLibre = new CasillaEspecialParadaLibre(21, "Parada Libre");
         this.getCasillas().add(casillaespecialParadaLibre);
 
         Casilla casillaEspecialCasualidad23 = new CasillaEspecialEventualidad(23,
-                CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
+                "Eventualidad Casualidad", CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
         this.getCasillas().add(casillaEspecialCasualidad23);
 
-        Casilla casillaEspecialIrCarcel = new CasillaEspecialDelito(31);
+        Casilla casillaEspecialIrCarcel = new CasillaEspecialDelito(31, "Delito, ir a la Carcel");
         this.getCasillas().add(casillaEspecialIrCarcel);
 
         Casilla casillaEspecialEventualidadArcaComun34 = new CasillaEspecialEventualidad(34,
-                CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
+                "Eventualidad Arca Comun",CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN);
         this.getCasillas().add(casillaEspecialEventualidadArcaComun34);
 
         Casilla casillaEspecialEventualidadCasualidad37 = new CasillaEspecialEventualidad(37,
-                CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
+                "Eventualidad Casualidad", CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD);
         this.getCasillas().add(casillaEspecialEventualidadCasualidad37);
 
-        Casilla casillaEspecialImpuesto39 = new CasillaEspecialImpuesto(39);
+        Casilla casillaEspecialImpuesto39 = new CasillaEspecialImpuesto(39, "Impuesto al lujo");
         this.getCasillas().add(casillaEspecialImpuesto39);
     }
 

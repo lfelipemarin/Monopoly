@@ -24,8 +24,8 @@ public abstract class CasillaEspecial extends Casilla {
 
     private String tipoCasillaEspecial;
 
-    public CasillaEspecial(int posicion) {
-        super(posicion);
+    public CasillaEspecial(int posicion, String nombre) {
+        super(posicion, nombre);
         this.setTipoCasilla(Casilla.TIPO_CASILLA_ESPECIAL);
     }
 

@@ -19,8 +19,8 @@ public class CasillaEspecialEventualidad extends CasillaEspecial {
 
     private final String tipoCasillaEspecialEventualidad;
 
-    public CasillaEspecialEventualidad(int posicion, String tipoCasillaEspecialEventualidad) {
-        super(posicion);
+    public CasillaEspecialEventualidad(int posicion, String nombre, String tipoCasillaEspecialEventualidad) {
+        super(posicion, nombre);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD);
         this.tipoCasillaEspecialEventualidad = tipoCasillaEspecialEventualidad;
     }

@@ -241,11 +241,13 @@ public class Juego {
         jugador.getFicha().aumentarPosicion(valorDados);
         int pos = jugador.getFicha().getPosicion();
         Casilla casilla = tablero.getCasillaByPos(pos);
-        JOptionPane.showMessageDialog(getGui(), "El jugador " + jugador.getNombre() + " sacó " + valorDados + ".\nCalló en la posicion " + pos);
+        JOptionPane.showMessageDialog(getGui(), "El jugador " + jugador.getNombre()
+                + " sacó " + valorDados + "\nCalló en la posicion " + pos + "\n"
+                + "" + casilla.getNombre());
         switch (casilla.getTipoCasilla()) {
             case Casilla.TIPO_CASILLA_PROPIEDAD:
                 CasillaPropiedad propiedad = (CasillaPropiedad) casilla;
-                JOptionPane.showMessageDialog(getGui(), "Propiedad " + propiedad.getNombre());
+                JOptionPane.showMessageDialog(getGui(), "Propiedad");
                 switch (propiedad.getEstado()) {
                     case CasillaPropiedad.ADQUIRIDA:
                         JOptionPane.showMessageDialog(getGui(), "Adquirida");

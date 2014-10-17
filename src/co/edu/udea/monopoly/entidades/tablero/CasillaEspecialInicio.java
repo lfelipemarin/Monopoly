@@ -14,14 +14,17 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialInicio extends CasillaEspecial {
     
-    public CasillaEspecialInicio(int posicion) {
-        super(posicion);
+    private static final int REGALO = 200;
+
+    public CasillaEspecialInicio(int posicion, String nombre) {
+        super(posicion, nombre);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_INICIO);
     }
-    
+
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        jugador.getCuenta().agregarDinero(CasillaEspecialInicio.REGALO);
+        juego.getBanco().restarDinero(CasillaEspecialInicio.REGALO);
     }
-    
+
 }

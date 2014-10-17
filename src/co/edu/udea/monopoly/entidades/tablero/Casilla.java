@@ -16,9 +16,11 @@ public abstract class Casilla {
 
     private final int posicion;
     private String tipoCasilla;
+    private final String nombre;
 
-    public Casilla(int posicion) {
+    public Casilla(int posicion, String nombre) {
         this.posicion = posicion;
+        this.nombre = nombre;
     }
 
     /**
@@ -40,5 +42,12 @@ public abstract class Casilla {
      */
     public void setTipoCasilla(String tipoCasilla) {
         this.tipoCasilla = tipoCasilla;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
     }
 }

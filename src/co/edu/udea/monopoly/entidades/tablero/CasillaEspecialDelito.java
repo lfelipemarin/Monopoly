@@ -14,8 +14,8 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialDelito extends CasillaEspecial {
 
-    public CasillaEspecialDelito(int posicion) {
-        super(posicion);
+    public CasillaEspecialDelito(int posicion, String nombre) {
+        super(posicion, nombre);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_DELITO);
     }
 

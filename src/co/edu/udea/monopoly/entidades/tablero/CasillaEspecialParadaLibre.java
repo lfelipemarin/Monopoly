@@ -14,15 +14,14 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  */
 public class CasillaEspecialParadaLibre extends CasillaEspecial {
     
-    public CasillaEspecialParadaLibre(int posicion) {
-        super(posicion);
+    public CasillaEspecialParadaLibre(int posicion, String nombre) {
+        super(posicion, nombre);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_PARADA_LIBRE);
     }
     
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         //se queda en la misma casilla y no se hace nada.
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

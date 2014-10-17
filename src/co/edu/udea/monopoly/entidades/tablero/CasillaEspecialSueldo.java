@@ -16,16 +16,15 @@ public class CasillaEspecialSueldo extends CasillaEspecial {
 
     private static final int SUELDO = 200;
 
-    public CasillaEspecialSueldo(int posicion) {
-        super(posicion);
+    public CasillaEspecialSueldo(int posicion, String nombre) {
+        super(posicion, nombre);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_SUELDO);
     }
 
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         //se cobra un sueldo de 200 al pasar por la casilla 1
-        int dineroJugador = jugador.getCuenta().getDinero();
-        jugador.getCuenta().setDinero(dineroJugador + SUELDO);
+        jugador.getCuenta().agregarDinero(SUELDO);
         juego.getBanco().restarDinero(SUELDO);
     }
 

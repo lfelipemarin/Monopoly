@@ -17,8 +17,8 @@ public class CasillaEspecialImpuesto extends CasillaEspecial {
     public static final int IMPUESTO_DECLARACION = 200;
     public static final int IMPUESTO_LUJOS = 75;
 
-    public CasillaEspecialImpuesto(int posicion) {
-        super(posicion);
+    public CasillaEspecialImpuesto(int posicion, String nombre) {
+        super(posicion, nombre);
         this.setTipoCasillaEspecial(CasillaEspecial.TIPO_CASILLA_ESPECIAL_IMPUESTO);
     }
 
