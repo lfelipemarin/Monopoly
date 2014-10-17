@@ -5,6 +5,9 @@
  */
 
 package co.edu.udea.monopoly.entidades.tarjeta;
+import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
 
 /**
  *
@@ -12,4 +15,31 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  */
 public abstract class TarjetaCobrar extends Tarjeta{
     
+    @Override
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta(tipoTarjeta); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Cobrar Acciones $50 "); //To change body of generated methods, choose Tools | Templates.
+    
+       }
+    
+    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+        int acciones=50;
+        int dinero=jugador.getCuenta().getDinero();
+        //Se abonan 50 en dinero al jugador por la venta de acciones
+        jugador.getCuenta().setDinero(dinero + acciones );
+        //Se restan 50 en dinero al banco
+        banco.restarDinero(acciones);
+        
+   
+        }
+
+    @Override
+    public String getMensaje() {
+        return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
+    }
 }
+   

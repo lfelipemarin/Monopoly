@@ -6,6 +6,9 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
@@ -13,8 +16,20 @@ package co.edu.udea.monopoly.entidades.tarjeta;
 public class TarjetaCarcelIrCarcel extends TarjetaCarcel{
 
     @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta(tipoTarjeta); 
+        }
+    
+    @Override
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Ir a la Carcel "); //To change body of generated methods, choose Tools | Templates.
+    
+       }
+    
+    @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        jugador.setEstado(Jugador.ESTADO_ENCARCELDADO);
+//        jugador.getFicha().setPosicion(this.getPosicion());
     }
 
     @Override

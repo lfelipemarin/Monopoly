@@ -12,4 +12,5 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  */
 public class TarjetaIrCasillaCobrar extends Tarjeta{
     
+    
 }

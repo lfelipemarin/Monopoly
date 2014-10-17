@@ -6,18 +6,36 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
  */
 public class TarjetaCobrarCumpleaños extends TarjetaCobrar{
-    @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+   @Override
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("arcaComun"); 
     }
-
+    
     @Override
-    public String getMensaje() {
-        return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Es tu cumpleaños Recibe $ 10 de cada jugador"); 
+    
+       }
+    
+     @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+        int cobro=10;
+        //Recorrer o restar a cada jugador 10 
+//        int dinero=jugador.getCuenta().getDinero();
+////        Se abonan 25 en dinero al jugador Recibe $ 25 Cuota de Consultoría 
+//        jugador.getCuenta().setDinero(dinero + cobro );
+////        Se restan 25 en dinero al banco
+//        banco.restarDinero(cobro);
+//        
+
     }
 }

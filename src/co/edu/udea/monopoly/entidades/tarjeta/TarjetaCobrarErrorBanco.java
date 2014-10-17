@@ -6,6 +6,10 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
@@ -13,13 +17,25 @@ package co.edu.udea.monopoly.entidades.tarjeta;
 public class TarjetaCobrarErrorBanco extends TarjetaCobrar{
 
     @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("arcaComun"); 
     }
-
+    
     @Override
-    public String getMensaje() {
-        return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Error del banco a su favor $ 75  "); 
+    
+       }
+    
+     @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+        int cobro=75;
+        int dinero=jugador.getCuenta().getDinero();
+        //Se abonan 75 en dinero al jugador Recibe $ 75 Error del banco 
+        jugador.getCuenta().setDinero(dinero + cobro );
+        //Se restan 75 en dinero al banco
+        banco.restarDinero(cobro);
+        
     }
     
 }

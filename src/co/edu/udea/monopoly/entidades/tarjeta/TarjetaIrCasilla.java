@@ -12,4 +12,9 @@ package co.edu.udea.monopoly.entidades.tarjeta;
  */
 public abstract class TarjetaIrCasilla extends Tarjeta{
     
+    @Override
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("casualidades"); 
+    }
+    
 }

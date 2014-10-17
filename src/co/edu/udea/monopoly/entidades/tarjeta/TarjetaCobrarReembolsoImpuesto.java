@@ -6,16 +6,35 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
  */
 public class TarjetaCobrarReembolsoImpuesto extends TarjetaCobrar{
-    @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+   @Override
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("arcaComun"); 
     }
-
+    
+    @Override
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Devolución de impuestos a las ganancias - recoger $ 20 "); 
+    
+       }
+    
+     @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+        int cobro=20;
+        int dinero=jugador.getCuenta().getDinero();
+        //Se abonan 20 en dinero al Reembolso de impuestos
+        jugador.getCuenta().setDinero(dinero + cobro );
+        //Se restan 25 en dinero al banco
+        banco.restarDinero(cobro);
+    }
     @Override
     public String getMensaje() {
         return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.

@@ -247,7 +247,7 @@ public class Juego {
         switch (casilla.getTipoCasilla()) {
             case Casilla.TIPO_CASILLA_PROPIEDAD:
                 CasillaPropiedad propiedad = (CasillaPropiedad) casilla;
-                JOptionPane.showMessageDialog(getGui(), "Propiedad");
+                JOptionPane.showMessageDialog(getGui(), "Propiedad "+ propiedad.getNombre().toString()+" Valor "+ propiedad.getValor());
                 switch (propiedad.getEstado()) {
                     case CasillaPropiedad.ADQUIRIDA:
                         JOptionPane.showMessageDialog(getGui(), "Adquirida");
@@ -286,7 +286,7 @@ public class Juego {
                         JOptionPane.showMessageDialog(getGui(), "Coge tarjeta");
                         break;
                     default:
-                        JOptionPane.showMessageDialog(getGui(), "Ejecuta accion");
+                        JOptionPane.showMessageDialog(getGui(), "Ejecuta accion ");
                         especial.ejecutarAccion(jugador, this);
                 }
                 break;
