@@ -5,9 +5,15 @@
  */
 package co.edu.udea.monopoly.gui;
 
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -15,12 +21,8 @@ import javax.swing.JTextField;
  */
 public class GUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Tablero
-     */
     public GUI() {
         initComponents();
-//        setLookAndFeel();
         setExtendedState(MAXIMIZED_BOTH);
         this.getRootPane().setDefaultButton(jButtonLanzar);
         this.jButtonLanzar.setEnabled(false);
@@ -28,13 +30,56 @@ public class GUI extends javax.swing.JFrame {
         this.setVisible(true);
     }
 
-//    public static void setLookAndFeel() {
-//        try {
-//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-//            JOptionPane.showMessageDialog(null, "Error cargando estilo visual.");
-//        }
-//    }
+    public void mostrarJugadoresEnTabla(ArrayList<Jugador> jugadores) {
+        DefaultTableModel modelo = (DefaultTableModel) getTablaJugadores().getModel();
+        modelo.setRowCount(0);
+        for (Jugador j : jugadores) {
+            Object[] row = new Object[5];
+            row[0] = j.getNombre();
+            row[1] = j.getFicha().getPosicion();
+            row[2] = j.getCuenta().getDinero();
+            row[3] = j.getCuenta().getPropiedades().size();
+            row[4] = j.getEstado();
+            modelo.addRow(row);
+        }
+        getTablaJugadores().setModel(modelo);
+        getTablaJugadores().changeSelection(0, 0, false, false);
+        centrarDatosTabla(jTableJugadores);
+        updateRowHeights(jTableJugadores);
+        getTablaJugadores().repaint();
+        getTablaJugadores().revalidate();
+    }
+
+    /*
+     centra los datos la tabla pasada como parametro
+     */
+    public final void centrarDatosTabla(JTable t) {
+        DefaultTableCellRenderer modeloCentrar = new DefaultTableCellRenderer();
+        modeloCentrar.setHorizontalAlignment(SwingConstants.CENTER);
+        for (int i = 0; i < t.getColumnCount(); i++) {
+            t.getColumnModel().getColumn(i).setCellRenderer(modeloCentrar);
+        }
+
+    }
+
+    /*
+    organiza la altura de las filas en la tabla pasada como parametro
+    */
+    private void updateRowHeights(JTable j) {
+        try {
+            for (int row = 0; row < j.getRowCount(); row++) {
+                int rowHeight = j.getRowHeight();
+
+                for (int column = 0; column < j.getColumnCount(); column++) {
+                    Component comp = j.prepareRenderer(j.getCellRenderer(row, column), row, column);
+                    rowHeight = Math.max(rowHeight, comp.getPreferredSize().height);
+                }
+
+                j.setRowHeight(row, (rowHeight + 10));
+            }
+        } catch (ClassCastException e) {
+        }
+    }
 
     public JButton getJButtonLanzar() {
         return this.jButtonLanzar;

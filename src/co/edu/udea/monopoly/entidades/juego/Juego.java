@@ -41,7 +41,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,19 +49,21 @@ import javax.swing.table.DefaultTableModel;
 public class Juego {
 
     private final Banco banco;
-    private final Turnero turnero;
     private final Tablero tablero;
     private final GUI gui;
-    private final ArrayList<Ficha> fichas;
+    private final Dado dadoA;
+    private final Dado dadoB;
     private final ArrayList<Tarjeta> tarjetasArcaComun;
     private final ArrayList<Tarjeta> tarjetasCasualidad;
+    private final ArrayList<Jugador> jugadores;
 
     public Juego() {
-        this.turnero = new Turnero();
+        this.jugadores = new ArrayList<>();
+        this.dadoA = new Dado();
+        this.dadoB = new Dado();
         this.tablero = new Tablero();
         this.banco = new Banco(tablero.getCasillas());
         this.gui = new GUI();
-        this.fichas = new ArrayList<>();
         this.tarjetasArcaComun = new ArrayList<>();
         this.tarjetasCasualidad = new ArrayList<>();
         this.gui.getJButtonLanzar().addActionListener(new ActionListener() {
@@ -79,8 +80,8 @@ public class Juego {
                 try {
                     String nombre = gui.getJTextFieldUsuario().getText();
                     if (nombre.length() > 1) {
-                        crearJugador(nombre, "Ficha" + nombre);
-                        fillTablaJugadores();
+                        registrarJugador(nombre);
+                        gui.mostrarJugadoresEnTabla(jugadores);
                         habilitarJuego();
                     } else {
                         JOptionPane.showMessageDialog(gui, ":(");
@@ -96,7 +97,6 @@ public class Juego {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                turnero.setJugadorEnTurno(turnero.getCicloTurnos().get(0).getJugador());
                 gui.getJButtonIniciar().setEnabled(false);
                 gui.getJButtonRegistrar().setEnabled(false);
                 gui.getJTextFieldUsuario().setEnabled(false);
@@ -105,42 +105,28 @@ public class Juego {
         });
     }
 
+    public void siguienteJugador() {
+        jugadores.add(jugadores.get(0));
+        jugadores.remove(0);
+    }
+
+    public int lanzarDados() {
+        return dadoA.getNumero() + dadoB.getNumero();
+    }
+
+    public void registrarJugador(String nombre) {
+        Ficha ficha = new Ficha("Ficha" + nombre);
+        Jugador jugador = new Jugador(ficha, nombre);
+        jugadores.add(jugador);
+    }
+
     public void habilitarJuego() {
-        if (turnero.getCicloTurnos().size() > 1) {
+        if (jugadores.size() > 1) {
             gui.getJButtonIniciar().setEnabled(true);
         }
-        if (turnero.getCicloTurnos().size() > 7) {
+        if (jugadores.size() > 7) {
             gui.getJButtonRegistrar().setEnabled(false);
         }
-    }
-
-    public final void crearJugador(String nombreJugador, String nombreFicha) {
-        Ficha ficha = new Ficha(nombreFicha);
-        Jugador jugador = new Jugador(ficha, nombreJugador);
-        getFichas().add(ficha);
-        getTurnero().agregarJugador(jugador);
-    }
-
-    public final void fillTablaJugadores() {
-        DefaultTableModel modelo = (DefaultTableModel) gui.getTablaJugadores().getModel();
-        modelo.setRowCount(0);
-        for (CicloTurnos c : turnero.getCicloTurnos()) {
-            Object[] row = new Object[5];
-            row[0] = c.getJugador().getNombre();
-            row[1] = c.getJugador().getFicha().getPosicion();
-            row[2] = c.getJugador().getCuenta().getDinero();
-            row[3] = c.getJugador().getCuenta().getPropiedades().size();
-            row[4] = c.getJugador().getEstado();
-            modelo.addRow(row);
-        }
-        gui.getTablaJugadores().setModel(modelo);
-        gui.getTablaJugadores().changeSelection(0, 0, false, false);
-        gui.getTablaJugadores().repaint();
-        gui.getTablaJugadores().revalidate();
-    }
-
-    public void resaltarJugadorEnTurno() {
-
     }
 
     /**
@@ -151,24 +137,10 @@ public class Juego {
     }
 
     /**
-     * @return the turnero
-     */
-    public Turnero getTurnero() {
-        return turnero;
-    }
-
-    /**
      * @return the tablero
      */
     public Tablero getTablero() {
         return tablero;
-    }
-
-    /**
-     * @return the fichas
-     */
-    public ArrayList<Ficha> getFichas() {
-        return fichas;
     }
 
     public Tarjeta getTarjetaArcaComun() {
@@ -261,11 +233,9 @@ public class Juego {
     }
 
     public void jugar() {
-
-        Jugador jugador = turnero.getJugadorEnTurno();
+        Jugador jugador = jugadores.get(0);
         int valorDados;
-        valorDados = turnero.tirarDados();
-//        valorDados = 16;
+        valorDados = lanzarDados();
         jugador.getFicha().aumentarPosicion(valorDados);
         int pos = jugador.getFicha().getPosicion();
         Casilla casilla = tablero.getCasillaByPos(pos);
@@ -312,7 +282,7 @@ public class Juego {
                 JOptionPane.showMessageDialog(gui, "Especial");
                 break;
         }
-        turnero.proximoJugador();
-        fillTablaJugadores();
+        siguienteJugador();
+        gui.mostrarJugadoresEnTabla(jugadores);
     }
 }
