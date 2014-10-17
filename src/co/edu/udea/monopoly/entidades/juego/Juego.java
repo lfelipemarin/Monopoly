@@ -253,10 +253,16 @@ public class Juego {
                         JOptionPane.showMessageDialog(getGui(), "Adquirida");
                         if (!jugador.getCuenta().getPropiedades().contains(propiedad)) {
                             JOptionPane.showMessageDialog(getGui(), "Paga renta.");
-                            propiedad.getPropietario().cobrarRenta(propiedad, jugador);
-                            return;
+                            if (propiedad.getPropietario().cobrarRenta(propiedad, jugador)) {
+                                JOptionPane.showMessageDialog(getGui(), jugador.getNombre() + "\n"
+                                        + "paga " + propiedad.getRenta() + " \n" + propiedad.getPropietario().getNombre());
+                            } else {
+                                JOptionPane.showMessageDialog(getGui(), "El jugador no puedo pagar renta\n"
+                                        + "queda endedudado");
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(getGui(), "Propia, no paga renta.");
                         }
-                        JOptionPane.showMessageDialog(getGui(), "Propia, no paga renta.");
                         break;
                     case CasillaPropiedad.DISPONIBLE:
                         JOptionPane.showMessageDialog(getGui(), "Disponible");
