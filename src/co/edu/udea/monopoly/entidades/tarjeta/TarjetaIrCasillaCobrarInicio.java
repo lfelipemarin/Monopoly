@@ -35,7 +35,7 @@ public class TarjetaIrCasillaCobrarInicio extends TarjetaIrCasillaCobrar{
         jugador.getCuenta().setDinero(dinero + cobro );
         //Se restan 25 en dinero al banco
         banco.restarDinero(cobro);
-//        jugador.getFicha().setPosicion(CasillaEspecialInicio.TIPO_CASILLA_ESPECIAL_INICIO);
+//        jugador.getFicha().setPosicion(CasillaEspecialInicio.TIPO_CASILLA_ESPECIAL_INICIO.);
     }
 
     @Override

@@ -6,7 +6,6 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -27,6 +26,7 @@ public class TarjetaIrCasillaTresCasillasAtras extends TarjetaIrCasilla{
        
     }
     
+    @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         int pos =jugador.getFicha().getPosicion();
         jugador.getFicha().setPosicion(pos - 3);

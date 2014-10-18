@@ -26,6 +26,7 @@ public class TarjetaPagarCasasHoteles extends TarjetaPagar{
        
     }
     
+     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         //Recorrer propiedades y descontar 25 por casa y 100 por hotel
 //        for (int i=1 to jugador.getCuenta().getPropiedades().size();){
