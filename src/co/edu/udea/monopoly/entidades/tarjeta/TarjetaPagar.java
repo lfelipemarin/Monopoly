@@ -6,17 +6,13 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
-import co.edu.udea.monopoly.entidades.juego.Juego;
-import co.edu.udea.monopoly.entidades.juego.Jugador;
-
 /**
  *
  * @author felipe
  */
 public class TarjetaPagar extends Tarjeta{
     
-     @Override
+    @Override
     public void setTipoTarjeta(String tipoTarjeta) {
         super.setTipoTarjeta(tipoTarjeta); 
     }
@@ -27,6 +23,15 @@ public class TarjetaPagar extends Tarjeta{
     
        }
     
+    @Override
+    public void ejecutarAccion() {
+       super.ejecutarAccion();
     
+       }
     
+    @Override
+     public String getMensaje() {
+       return super.getMensaje();
+       
+    }
 }
