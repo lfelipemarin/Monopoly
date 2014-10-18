@@ -17,12 +17,12 @@ public class TarjetaCarcelSalirCarcel extends TarjetaCarcel{
 
    @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("casualidades"); 
+        super.setTipoTarjeta("arcaComun"); 
     }
     
    @Override
     public void setMensaje(String mensaje) {
-       super.setMensaje("Sale de la carcel"); //To change body of generated methods, choose Tools | Templates.
+       super.setMensaje("Sale de la carcel, si no esta en la carcel puede conservar comodin"); //To change body of generated methods, choose Tools | Templates.
     
        }
     

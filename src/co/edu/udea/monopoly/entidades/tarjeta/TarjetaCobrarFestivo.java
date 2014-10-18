@@ -6,7 +6,6 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -22,7 +21,7 @@ public class TarjetaCobrarFestivo extends TarjetaCobrar{
     
     @Override
     public void setMensaje(String mensaje) {
-       super.setMensaje("Usted recibe $ 100 "); 
+       super.setMensaje("Usted recibe $ 100 !Es festivo "); 
     
        }
     

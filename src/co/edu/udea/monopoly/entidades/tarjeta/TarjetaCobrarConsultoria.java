@@ -5,7 +5,6 @@
  */
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 

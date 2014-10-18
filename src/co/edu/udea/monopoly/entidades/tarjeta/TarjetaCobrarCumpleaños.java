@@ -5,7 +5,6 @@
  */
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -34,8 +33,10 @@ public class TarjetaCobrarCumpleaños extends TarjetaCobrar {
             j.getCuenta().restarDinero(cobro);
             jugador.getCuenta().agregarDinero(cobro);   //se agregan 10 por cada jugador
         }
-        
-
-
+    
+    }
+    @Override
+    public String getMensaje() {
+        return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
     }
 }

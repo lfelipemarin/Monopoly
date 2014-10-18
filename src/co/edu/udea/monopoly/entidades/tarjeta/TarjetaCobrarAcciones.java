@@ -5,8 +5,6 @@
  */
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
-import co.edu.udea.monopoly.entidades.juego.Cuenta;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -23,7 +21,7 @@ public class TarjetaCobrarAcciones extends TarjetaCobrar {
 
     @Override
     public void setMensaje(String mensaje) {
-        super.setMensaje("Cobrar Acciones $50 "); //To change body of generated methods, choose Tools | Templates.
+        super.setMensaje("Cobrar venta Acciones $50 "); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

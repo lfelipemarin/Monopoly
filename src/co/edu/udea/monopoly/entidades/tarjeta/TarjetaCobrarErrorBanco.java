@@ -6,7 +6,6 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -38,5 +37,8 @@ public class TarjetaCobrarErrorBanco extends TarjetaCobrar{
         juego.getBanco().restarDinero(cobro);
         
     }
-    
+    @Override
+    public String getMensaje() {
+        return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
+    }
 }

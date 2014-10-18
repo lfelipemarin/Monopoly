@@ -6,7 +6,6 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -17,7 +16,7 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
 public class TarjetaCobrarReembolsoImpuesto extends TarjetaCobrar{
    @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("arcaComun"); 
+        super.setTipoTarjeta("arcaComun"); // duda si es casualidades
     }
     
     @Override

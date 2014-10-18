@@ -28,8 +28,7 @@ public abstract class TarjetaPagar extends Tarjeta{
     
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-       super.ejecutarAccion();
-    
+     
        }
     
     @Override

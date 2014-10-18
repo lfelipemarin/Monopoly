@@ -6,7 +6,6 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -17,7 +16,7 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
 public class TarjetaCobrarImpuestosPrestamos extends TarjetaCobrar{
     @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("No se"); 
+        super.setTipoTarjeta("arcaComun"); 
     }
     
     @Override
@@ -28,12 +27,13 @@ public class TarjetaCobrarImpuestosPrestamos extends TarjetaCobrar{
     
      @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-//        int cobro=20;
-//        int dinero=jugador.getCuenta().getDinero();
-//        //Se abonan 20 en dinero al Reembolso de impuestos
-//        jugador.getCuenta().setDinero(dinero + cobro );
-//        //Se restan 25 en dinero al banco
-//        juego.getBanco().restarDinero(cobro);
+        //ojo aqui hay que cobrar prestamos
+        int cobro=20;
+        int dinero=jugador.getCuenta().getDinero();
+        //Se abonan 20 en dinero al Reembolso de impuestos
+        jugador.getCuenta().setDinero(dinero + cobro );
+        //Se restan 20 en dinero al banco
+        juego.getBanco().restarDinero(cobro);
     }
     @Override
     public String getMensaje() {

@@ -20,15 +20,16 @@ public abstract class TarjetaCarcel extends Tarjeta{
 
     @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta(tipoTarjeta); //To change body of generated methods, choose Tools | Templates.
+        super.setTipoTarjeta("casualidades"); //To change body of generated methods, choose Tools | Templates.
     }
 
        @Override
        public void setMensaje(String mensaje) {
-       super.setMensaje("Ir a la Carcel "); //To change body of generated methods, choose Tools | Templates.
+       super.setMensaje("Ir a la Carcel sin posibilidad de Fianza "); //To change body of generated methods, choose Tools | Templates.
     
        }
        
+    @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         
         jugador.setEstado(Jugador.ESTADO_ENCARCELDADO);

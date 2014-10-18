@@ -19,7 +19,7 @@ public class TarjetaIrCasillaCobrarInicio extends TarjetaIrCasillaCobrar{
     
     @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("casualidades"); 
+        super.setTipoTarjeta("arcaComun"); 
     }
     
     @Override

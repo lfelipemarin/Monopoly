@@ -5,7 +5,6 @@
  */
 package co.edu.udea.monopoly.entidades.tarjeta;
 
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -28,11 +27,11 @@ public class TarjetaCobrarConcursoBelleza extends TarjetaCobrar {
 
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        int concursobelleza = 10;
+        int cobro = 10;
         //Se abonan 10 en dinero al jugador gana concurso de belleza
-        jugador.getCuenta().agregarDinero(concursobelleza);
+        jugador.getCuenta().agregarDinero(cobro);
         //Se restan 10 en dinero al banco
-        juego.getBanco().restarDinero(concursobelleza);
+        juego.getBanco().restarDinero(cobro);
 
     }
 

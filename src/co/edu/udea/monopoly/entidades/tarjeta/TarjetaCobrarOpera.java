@@ -5,8 +5,6 @@
  */
 
 package co.edu.udea.monopoly.entidades.tarjeta;
-
-import co.edu.udea.monopoly.entidades.juego.Banco;
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -28,12 +26,12 @@ public class TarjetaCobrarOpera extends TarjetaCobrar{
     
      @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-//        int cobro=50;
-//        int dinero=jugador.getCuenta().getDinero();
-//        //Se abonan 20 en dinero al Reembolso de impuestos
-//        jugador.getCuenta().setDinero(dinero + cobro );
-//        //Se restan 25 en dinero al banco
-//        juego.getBanco().restarDinero(cobro);
+        int cobro = 50;
+        //Recorrer o restar a cada jugador 10 
+        for (Jugador j : juego.getJugadores()) {
+            j.getCuenta().restarDinero(cobro);
+            jugador.getCuenta().agregarDinero(cobro);   //se agregan 10 por cada jugador
+    }
     }
     @Override
     public String getMensaje() {

@@ -18,12 +18,12 @@ public class TarjetaCobrarBanco extends TarjetaCobrar {
     
      @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("arcaComun"); 
+        super.setTipoTarjeta("casualidades"); 
     }
     
     @Override
     public void setMensaje(String mensaje) {
-       super.setMensaje("Cobrar al banco $50 "); 
+       super.setMensaje("Cobrar al banco dividendos $50 "); 
     
        }
     

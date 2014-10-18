@@ -14,10 +14,19 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  * @author felipe
  */
 public class TarjetaIrCasillaCasillaPropiedad extends TarjetaIrCasilla{
-
+@Override
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("arcaComun"); 
+    }
+    
+    @Override
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Ir a Ilinois"); 
+    
+       }
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        super.ejecutarAccion();
+        
     }
 
     @Override
