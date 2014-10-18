@@ -83,7 +83,7 @@ public class Juego {
                     String nombre = getGui().getJTextFieldUsuario().getText();
                     if (nombre.length() > 1) {
                         registrarJugador(nombre);
-                        getGui().mostrarJugadoresEnTabla(jugadores);
+                        getGui().mostrarJugadoresEnTabla(getJugadores());
                         habilitarJuego();
                     } else {
                         JOptionPane.showMessageDialog(getGui(), ":(");
@@ -108,8 +108,8 @@ public class Juego {
     }
 
     public void siguienteJugador() {
-        jugadores.add(jugadores.get(0));
-        jugadores.remove(0);
+        getJugadores().add(getJugadores().get(0));
+        getJugadores().remove(0);
     }
 
     public int lanzarDados() {
@@ -119,14 +119,14 @@ public class Juego {
     public void registrarJugador(String nombre) {
         Ficha ficha = new Ficha("Ficha" + nombre);
         Jugador jugador = new Jugador(ficha, nombre);
-        jugadores.add(jugador);
+        getJugadores().add(jugador);
     }
 
     public void habilitarJuego() {
-        if (jugadores.size() > 1) {
+        if (getJugadores().size() > 1) {
             getGui().getJButtonIniciar().setEnabled(true);
         }
-        if (jugadores.size() > 7) {
+        if (getJugadores().size() > 7) {
             getGui().getJButtonRegistrar().setEnabled(false);
         }
     }
@@ -235,7 +235,7 @@ public class Juego {
     }
 
     public void jugar() {
-        Jugador jugador = jugadores.get(0);
+        Jugador jugador = getJugadores().get(0);
         int valorDados;
         valorDados = lanzarDados();
         jugador.getFicha().aumentarPosicion(valorDados);
@@ -292,7 +292,7 @@ public class Juego {
                 break;
         }
         siguienteJugador();
-        getGui().mostrarJugadoresEnTabla(jugadores);
+        getGui().mostrarJugadoresEnTabla(getJugadores());
     }
 
     /**
@@ -300,5 +300,12 @@ public class Juego {
      */
     public GUI getGui() {
         return gui;
+    }
+
+    /**
+     * @return the jugadores
+     */
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
     }
 }

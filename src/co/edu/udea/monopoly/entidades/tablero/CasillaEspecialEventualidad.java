@@ -36,10 +36,10 @@ public class CasillaEspecialEventualidad extends CasillaEspecial {
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         switch (tipoCasillaEspecialEventualidad) {
             case CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_ARCA_COMUN:
-                juego.getTarjetaArcaComun().ejecutarAccion();
+                juego.getTarjetaArcaComun().ejecutarAccion(jugador, juego);
                 break;
             case CasillaEspecialEventualidad.TIPO_CASILLA_ESPECIAL_EVENTUALIDAD_CASUALIDAD:
-                juego.getTarjetaCasualidad().ejecutarAccion();
+                juego.getTarjetaCasualidad().ejecutarAccion(jugador, juego);
                 break;
         }
     }

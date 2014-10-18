@@ -28,13 +28,12 @@ public class TarjetaCobrarBanco extends TarjetaCobrar {
        }
     
      @Override
-    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
         int cobro=50;
-        int dinero=jugador.getCuenta().getDinero();
         //Se abonan 50 en dinero al jugador Banco le paga dividendo de $ 50 
-        jugador.getCuenta().setDinero(dinero + cobro );
+        jugador.getCuenta().agregarDinero(cobro);
         //Se restan 50 en dinero al banco
-        banco.restarDinero(cobro);
+        juego.getBanco().restarDinero(cobro);
         
 
     }

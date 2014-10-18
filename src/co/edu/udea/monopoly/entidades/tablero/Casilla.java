@@ -9,7 +9,7 @@ package co.edu.udea.monopoly.entidades.tablero;
  *
  * @author felipe
  */
-public abstract class Casilla {
+public class Casilla {
 
     public static final String TIPO_CASILLA_PROPIEDAD = "propiedad";
     public static final String TIPO_CASILLA_ESPECIAL = "especial";

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package co.edu.udea.monopoly.entidades.tarjeta;
 
 import co.edu.udea.monopoly.entidades.juego.Banco;
@@ -14,29 +13,27 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
  *
  * @author felipe
  */
-public class TarjetaCobrarConcursoBelleza extends TarjetaCobrar{
-  
+public class TarjetaCobrarConcursoBelleza extends TarjetaCobrar {
+
     @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("arcaComun"); 
+        super.setTipoTarjeta("arcaComun");
     }
-    
-    
-      @Override
-    public void setMensaje(String mensaje) {
-       super.setMensaje("Gana concurso de belleza 2°Puesto reclama $10 "); 
-    
-       }
-    
+
     @Override
-    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
-        int concursobelleza=10;
-        int dinero=jugador.getCuenta().getDinero();
+    public void setMensaje(String mensaje) {
+        super.setMensaje("Gana concurso de belleza 2°Puesto reclama $10 ");
+
+    }
+
+    @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        int concursobelleza = 10;
         //Se abonan 10 en dinero al jugador gana concurso de belleza
-        jugador.getCuenta().setDinero(dinero + concursobelleza);
+        jugador.getCuenta().agregarDinero(concursobelleza);
         //Se restan 10 en dinero al banco
-        banco.restarDinero(concursobelleza);
-        
+        juego.getBanco().restarDinero(concursobelleza);
+
     }
 
     @Override
@@ -44,4 +41,3 @@ public class TarjetaCobrarConcursoBelleza extends TarjetaCobrar{
         return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
     }
 }
-   
