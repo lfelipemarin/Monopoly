@@ -892,7 +892,7 @@ public class GUI extends javax.swing.JFrame {
         jPanelIniciarJuego.add(jTextFieldUsuario, gridBagConstraints);
 
         jButtonRegistrar.setFont(new java.awt.Font("Ubuntu", 1, 12)); // NOI18N
-        jButtonRegistrar.setText("Regitrar");
+        jButtonRegistrar.setText("Registrar");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
