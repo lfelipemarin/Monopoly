@@ -5,8 +5,6 @@
  */
 
 package co.edu.udea.monopoly.entidades.tarjeta;
-
-
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -17,7 +15,7 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
 public class TarjetaPagarCasasHoteles extends TarjetaPagar{
      @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("casualidades"); 
+        super.setTipoTarjeta("arcaComun"); 
     }
     
     @Override

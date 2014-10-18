@@ -17,7 +17,7 @@ public class TarjetaIrCasillaCobrar extends Tarjeta{
 
     @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
     }
     
     

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package co.edu.udea.monopoly.entidades.tarjeta;
-
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 

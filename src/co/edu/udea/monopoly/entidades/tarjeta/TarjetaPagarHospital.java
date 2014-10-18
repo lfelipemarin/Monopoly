@@ -5,7 +5,6 @@
  */
 
 package co.edu.udea.monopoly.entidades.tarjeta;
-
 import co.edu.udea.monopoly.entidades.juego.Juego;
 import co.edu.udea.monopoly.entidades.juego.Jugador;
 
@@ -16,7 +15,7 @@ import co.edu.udea.monopoly.entidades.juego.Jugador;
 public class TarjetaPagarHospital extends TarjetaPagar{
     @Override
     public void setTipoTarjeta(String tipoTarjeta) {
-        super.setTipoTarjeta("arcacomun"); 
+        super.setTipoTarjeta("arcaComun"); 
     }
     
     @Override
@@ -25,6 +24,7 @@ public class TarjetaPagarHospital extends TarjetaPagar{
        
     }
     
+    @Override
     public void ejecutarAccion(Jugador jugador, Juego juego) {
         int cobro=100;
         int dinero=jugador.getCuenta().getDinero();
