@@ -6,6 +6,9 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
@@ -13,8 +16,8 @@ package co.edu.udea.monopoly.entidades.tarjeta;
 public class TarjetaIrCasillaCasillaPropiedad extends TarjetaIrCasilla{
 
     @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        super.ejecutarAccion();
     }
 
     @Override

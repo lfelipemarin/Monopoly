@@ -27,13 +27,13 @@ public class TarjetaCobrarFestivo extends TarjetaCobrar{
        }
     
      @Override
-    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
         int cobro=100;
         int dinero=jugador.getCuenta().getDinero();
         //Se abonan 100 en dinero al jugador Herencia
         jugador.getCuenta().setDinero(dinero + cobro );
         //Se restan 100 en dinero al banco
-        banco.restarDinero(cobro);
+        juego.getBanco().restarDinero(cobro);
         
     }
     

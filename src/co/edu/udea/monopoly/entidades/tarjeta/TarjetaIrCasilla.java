@@ -17,4 +17,8 @@ public abstract class TarjetaIrCasilla extends Tarjeta{
         super.setTipoTarjeta("casualidades"); 
     }
     
+    void ejecutarAccion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

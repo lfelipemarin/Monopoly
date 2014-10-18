@@ -27,13 +27,13 @@ public class TarjetaCobrarImpuestosPrestamos extends TarjetaCobrar{
        }
     
      @Override
-    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
 //        int cobro=20;
 //        int dinero=jugador.getCuenta().getDinero();
 //        //Se abonan 20 en dinero al Reembolso de impuestos
 //        jugador.getCuenta().setDinero(dinero + cobro );
 //        //Se restan 25 en dinero al banco
-//        banco.restarDinero(cobro);
+//        juego.getBanco().restarDinero(cobro);
     }
     @Override
     public String getMensaje() {

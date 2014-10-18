@@ -6,6 +6,10 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Banco;
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
@@ -13,9 +17,21 @@ package co.edu.udea.monopoly.entidades.tarjeta;
 public class TarjetaIrCasillaTresCasillasAtras extends TarjetaIrCasilla{
 
     @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("casualidades"); 
     }
+    
+    @Override
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Regresa 3 casillas atras"); 
+       
+    }
+    
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        int pos =jugador.getFicha().getPosicion();
+        jugador.getFicha().setPosicion(pos - 3);
+        }
+    
 
     @Override
     public String getMensaje() {

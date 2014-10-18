@@ -6,11 +6,19 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
  */
 public class TarjetaIrCasillaCobrar extends Tarjeta{
+
+    @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

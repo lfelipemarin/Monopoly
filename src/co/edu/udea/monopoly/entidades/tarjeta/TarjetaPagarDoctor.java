@@ -6,14 +6,33 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
  */
 public class TarjetaPagarDoctor extends TarjetaPagar{
+     @Override
+    public void setTipoTarjeta(String tipoTarjeta) {
+        super.setTipoTarjeta("arcacomun"); 
+    }
+    
     @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
+    public void setMensaje(String mensaje) {
+       super.setMensaje("Pagar Doctor $50"); 
+       
+    }
+    
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        int cobro=50;
+        int dinero=jugador.getCuenta().getDinero();
+        //Se restan 50 en dinero al jugador 
+        jugador.getCuenta().setDinero(dinero - cobro );
+        //Se abonan 50 en dinero al banco
+        juego.getBanco().agregarDinero(cobro);
+        
     }
 
     @Override

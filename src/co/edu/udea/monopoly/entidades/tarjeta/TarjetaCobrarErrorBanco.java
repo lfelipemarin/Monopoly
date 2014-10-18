@@ -27,14 +27,15 @@ public class TarjetaCobrarErrorBanco extends TarjetaCobrar{
     
        }
     
-     @Override
-    public void ejecutarAccion(Jugador jugador, Juego juego, Banco banco) {
+     
+    @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
         int cobro=75;
         int dinero=jugador.getCuenta().getDinero();
         //Se abonan 75 en dinero al jugador Recibe $ 75 Error del banco 
         jugador.getCuenta().setDinero(dinero + cobro );
         //Se restan 75 en dinero al banco
-        banco.restarDinero(cobro);
+        juego.getBanco().restarDinero(cobro);
         
     }
     

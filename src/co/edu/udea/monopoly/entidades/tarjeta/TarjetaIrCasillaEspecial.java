@@ -6,20 +6,25 @@
 
 package co.edu.udea.monopoly.entidades.tarjeta;
 
+import co.edu.udea.monopoly.entidades.juego.Juego;
+import co.edu.udea.monopoly.entidades.juego.Jugador;
+
 /**
  *
  * @author felipe
  */
 public class TarjetaIrCasillaEspecial extends TarjetaIrCasilla{
 
-    @Override
-    public void ejecutarAccion() {
-        super.ejecutarAccion(); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public String getMensaje() {
         return super.getMensaje(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void ejecutarAccion(Jugador jugador, Juego juego) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
